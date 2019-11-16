@@ -24,3 +24,18 @@ margin-top: 30px;
 
 }
       /*TERMINA REGISTRO.HTML*/
+
+      /*HOME.HTML */
+
+/*BUTTON (Jugar)*/
+
+      #botonJugar button{
+        width: 100px;
+        padding: 10px;
+      }
+      #botonJugar button a {
+        text-decoration: none;
+      }
+
+
+     /*HASTA ACA HOME*/
