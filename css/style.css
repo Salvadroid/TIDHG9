@@ -44,15 +44,25 @@ background-color: #D43535;
         text-decoration: none;
         text-transform: uppercase;
         color: #FF8000;
-        font-family: "Alata", "sans-serif";
-        font-size: 20px;
+        font-family: "Amatic SC", "sans-serif";
+        font-size: 40px;
 
 
       }
       #tituloHome {
-        font-family: ;
-        font-size: ;
+        font-family: "Amatic SC", "sans-serif"; ;
+        font-size:40px ;
         color: ;
+        display: flex;
+        justify-content: center;
+        padding: 3px;
+      }
+      #infoMasBotonJ article p {
+        width: 90%;
+        font-family: "Amatic SC", "sans-serif";
+        font-size: 30px;
+        background-color: white;
+        padding: 3px;
       }
 
 
@@ -125,10 +135,13 @@ background-color: #D43535;
    /*hasta aca usuario.html*/
 
    /*JUEGO.HTML*/
+    /*#juego {
+      background-color: white;
+    }*/
    .caja {
      margin: 0 auto;
-     margin-top: 80px;
-     width: 60%;
+     margin-top: 50px;
+     width: 80%;
      height: 300px;
      border-radius: 10%;
      border: 2px solid black;
