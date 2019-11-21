@@ -218,62 +218,63 @@ background-color: #D43535;
 
    /*HASTA ACA JUEGO-HTML*/
    /*FAQ style*/
-      #bodyFAQ,
-      #bodyFAQ::before,
-      #bodyFAQ::after{
-        margin: 0;
-        padding: 0;
-        box-sizing:inherit;
-      }
-       #htmlFAQ{
-        font-size: 10px;
-        box-sizing: border-box;
-      }
-      /*Acá centro el contenido*/
-      section{
-        width: 100%;
-        height: 100vh;
-        background-image: url('../img/joysticks.jpg');
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-      .container{
-        width: 100%;
-        max-width: 80rem;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-      }
-      .accordion-item{
-        background-color: rgba(212,53,53,0.8);
-        border-radius: .4rem;
-        margin-bottom: 1rem;
-        padding: 1rem;
+   /*FAQ style*/
+     #bodyFAQ,
+     #bodyFAQ::before,
+     #bodyFAQ::after{
+       margin: 0;
+       padding: 0;
+       box-sizing:inherit;
+     }
+      #htmlFAQ{
+       font-size: 10px;
+       box-sizing: border-box;
+     }
+     /*Acá centro el contenido*/
+     section{
+       width: 100%;
+       height: 100vh;
+       background-image: url('../img/joysticks.jpg');
+       background-size: cover;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+     }
+     .container{
+       width: 100%;
+       max-width: 80rem;
+       margin: 0 auto;
+       padding: 0 1.5rem;
+     }
+     .accordion-item{
+       background-color: rgba(212,53,53,0.8);
+       border-radius: .4rem;
+       margin-bottom: 1rem;
+       padding: 1rem;
 
-      }
-      .accordion-link{
-        font-size: 1.6rem;
-        color: rgb(255,255,255);
-        text-decoration: none;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 0;
-      }
-      .respuesta{
-        max-height: 0;
-        overflow:hidden;
-        position: relative;
-        transition: max-height 600ms;
-      }
-      .respuesta p{
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1.4rem;
-        padding: 2rem;
-      }
-      .accordion-item:target .respuesta{
-        max-height: 20rem;
-      }
+     }
+     .accordion-link{
+       font-size: 1.6rem;
+       color: rgb(255,255,255);
+       text-decoration: none;
+       width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 1rem 0;
+     }
+     .respuesta{
+       max-height: 0;
+       overflow:hidden;
+       position: relative;
+       transition: max-height 600ms;
+     }
+     .respuesta p{
+       color: rgba(255, 255, 255, 0.6);
+       font-size: 2rem;
+       padding: 2rem;
+     }
+     .accordion-item:target .respuesta{
+       max-height: 20rem;
+     }
