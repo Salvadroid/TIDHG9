@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
     <title>Registro</title>
 </head>
-<body>
+<body class="bodyRegistro">
   <header>
     <nav>
       <ul>
@@ -22,7 +22,7 @@
 
       </ul>
     </nav>
-      <h1 class="registro">Título</h1>
+      <h1 class="registro">Registrarse</h1>
     </header>
     <section>
       <main>
@@ -32,11 +32,7 @@
           <div class="formularioR">
 
             <form class="" action="index.html" method="post">
-              <div class="">
-                  <label class="" for="comoIngresa">Se registra como:</label>
-                  <input class="" type="radio" name="comoIngresa" value="administrador" required> Administrador
-                  <input class="" type="radio" name="comoIngresa" value="jugador" required> Jugador
-              </div>
+
               <div class="">
                   <h2>Registrarse con email</h2>
               </div>
@@ -53,14 +49,14 @@
                   <input class="" type="password" name="repetirpass" value="" required >
               </div>
               <div class="">
-                  <button type="submit" name="button">Enviar</button>
+                  <button id="botEnviar" type="submit" name="button">Enviar</button>
               </div>
               <div class="">
                   <h2 class="">Registrarse con Facebook</h2>
 
               </div>
               <div class="">
-                  <button id="botonFacebook" type="button" name="button"><a href="#" ></a><ion-icon name="logo-facebook">Registrarse con Facebook</ion-icon></button>
+                  <button id="botonFacebook" type="submit" name="button">Registrarse con Facebook</button>
               </div>
 
            </form>

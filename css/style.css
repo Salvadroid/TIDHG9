@@ -1,5 +1,9 @@
-/*  REGISTRO.HTML (SIN TERMINAR)*/
 *{margin: 0 auto;}
+/*  REGISTRO.HTML */
+.bodyRegistro {
+  background-image: url('../img/joysticks.jpg');
+}
+
 .registro{
 width: 400px;
 padding: 5px;
@@ -18,18 +22,54 @@ background-color: #D43535;
   margin: 10px;
   padding: 2px;
 }
-
+#botEnviar {
+font-family: "Alata","sans-serif" ;
+}
 
 #botonFacebook {
   width: 200px;
   padding: 10px;
-
+  color: white;
+  background-color: #0040FF;
+  font-family: "Alata","sans-serif" ;
 }
       /*TERMINA REGISTRO.HTML*/
+      /*LOGIN.HTML*/
+.bodyLogin {
+  background-image: url('../img/joysticks.jpg');
+}
+.login {
+  width: 400px;
+  padding: 5px;
+  border: 1px solid #fff;
+  margin-top: 30px;
+  font-family: "Alata","sans-serif" ;
+  background-color: #D43535;
+}
+.login h1 {
+  font-family: "Alata","sans-serif" ;
+  font-size: 10px;
+}
+.formularioL div {
+  margin: 10px;
+  padding: 2px;
+}
+#botInresar {
+  font-family: "Alata","sans-serif" ;
+}
+#BotonFacebookIngreso {
+  width: 200px;
+  padding: 10px;
+  color: white;
+  background-color: #0040FF;
+  font-family: "Alata","sans-serif" ;
+}
 
       /*HOME.HTML */
+      .bodyHome {
+        background-image: url('../img/joysticks.jpg');
+      }
 
-/*BUTTON (Jugar)*/
 
       #botonJugar button{
         width: 100px;
@@ -69,12 +109,10 @@ background-color: #D43535;
      /*HASTA ACA HOME*/
 
      /*Usuario.html*/
-  /*  .usuario{background-image: url('../img/joysticks.jpg');
-    background-size: 500px 970px;}*/
+    .usuario{background-image: url('../img/joysticks.jpg');
+    background-size: 500px 970px;}
 
     body{
-        background-image: url('../img/joysticks.jpg');
-        background-size: 500px 970px;
         width: 100%;
     }
 
@@ -135,9 +173,9 @@ background-color: #D43535;
    /*hasta aca usuario.html*/
 
    /*JUEGO.HTML*/
-    /*#juego {
-      background-color: white;
-    }*/
+  .juegoHtml {
+    background-image: url('../img/joysticks.jpg')
+  }
    .caja {
      margin: 0 auto;
      margin-top: 50px;
@@ -227,9 +265,10 @@ background-color: #D43535;
      #htmlFAQ{
        font-size: 12px;
        box-sizing: border-box;
-     }
+      /* background-image: url('../img/joysticks.jpg');
+    */}
 
-     section{
+       .sectionFaq {
        width: 100%;
        height: 100vh;
        background-image: url('../img/joysticks.jpg');
