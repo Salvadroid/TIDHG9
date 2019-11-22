@@ -219,18 +219,16 @@ background-color: #D43535;
    /*HASTA ACA JUEGO-HTML*/
    /*FAQ style*/
    /*FAQ style*/
-     #bodyFAQ,
-     #bodyFAQ::before,
-     #bodyFAQ::after{
+       #bodyFAQ{
        margin: 0;
        padding: 0;
        box-sizing:inherit;
      }
-      #htmlFAQ{
-       font-size: 10px;
+     #htmlFAQ{
+       font-size: 12px;
        box-sizing: border-box;
      }
-     /*Acá centro el contenido*/
+
      section{
        width: 100%;
        height: 100vh;
