@@ -67,42 +67,60 @@ font-family: "Alata","sans-serif" ;
 
       /*HOME.HTML */
       .bodyHome {
-        background-image: url('../img/joysticks.jpg');
+        background-image: url('../img/background.jpg');
       }
-
-
+      #HomeSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .titulo{
+        padding-top: 19vh;
+        padding-bottom: 10vh;
+      }
+      .titulo img{
+        width:55vw;
+      }
+      #infoMasBotonJ{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
       #botonJugar button{
-        width: 100px;
-        padding: 10px;
+        width: 15vw;
+        height: 15vh;
+        padding: 1rem;
         background-color:#fff;
+        border-left:   2vw #c6c2c2 solid;
+        border-bottom: 3vh #c6c2c2 solid;
         display: flex;
         justify-content: center;
-        margin-top: 30px;
-
+        margin-top: 3rem;
+        margin-bottom:3rem;
       }
       #botonJugar button a {
         text-decoration: none;
         text-transform: uppercase;
         color: #FF8000;
         font-family: "Amatic SC", "sans-serif";
-        font-size: 40px;
+        font-size:8vh;
+        padding-left: .5vw;
+        margin-top: -1vh;
+      }
 
 
-      }
-      #tituloHome {
-        font-family: "Amatic SC", "sans-serif"; ;
-        font-size:40px ;
-        color: ;
-        display: flex;
-        justify-content: center;
-        padding: 3px;
-      }
       #infoMasBotonJ article p {
-        width: 90%;
+        width: 80%;
         font-family: "Amatic SC", "sans-serif";
-        font-size: 30px;
-        background-color: white;
-        padding: 3px;
+        font-size:7vh;
+        background-color: rgba(255,255,255,.8);
+        padding: 1.5vw;
+        border-radius: 1vw;
+        margin-top: 10%;
+        margin-left:10%;
+        margin-bottom: 10%
       }
 
 
