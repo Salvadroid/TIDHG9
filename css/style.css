@@ -1,7 +1,7 @@
 *{margin: 0 auto;}
 /*  REGISTRO.HTML */
 .bodyRegistro {
-  background-image: url('../img/joysticks.jpg');
+  background-image: url('../img/background.jpg');
 }
 
 .registro{
@@ -10,7 +10,8 @@ padding: 5px;
 border: 1px solid #fff;
 margin-top: 30px;
 font-family: "Alata","sans-serif" ;
-background-color: #D43535;
+background-color: rgba(255,255,255,.8);
+
 
 }
 .registro h1{
@@ -24,13 +25,15 @@ background-color: #D43535;
 }
 #botEnviar {
 font-family: "Alata","sans-serif" ;
+color:#000;
+background-color:#fff ;
 }
 
 #botonFacebook {
   width: 60vw;
-  padding: 10px;
-  color: white;
-  background-color: #0040FF;
+  padding: 7px;
+  color:#000;
+  background-color:#fff ;
   font-family: "Alata","sans-serif" ;
 }
 @media (min-width:1050px){/*desktop*/
@@ -46,7 +49,7 @@ font-family: "Alata","sans-serif" ;
       /*TERMINA REGISTRO.HTML*/
       /*LOGIN.HTML*/
 .bodyLogin {
-  background-image: url('../img/joysticks.jpg');
+  background-image: url('../img/background.jpg');
 }
 .login {
   width: 70vw;
@@ -54,7 +57,7 @@ font-family: "Alata","sans-serif" ;
   border: 1px solid #fff;
   margin-top: 30px;
   font-family: "Alata","sans-serif" ;
-  background-color: #D43535;
+  background-color: rgba(255,255,255,.8);
 }
 .login h1 {
   font-family: "Alata","sans-serif" ;
@@ -66,12 +69,14 @@ font-family: "Alata","sans-serif" ;
 }
 #botInresar {
   font-family: "Alata","sans-serif" ;
+  color:#000;
+  background-color:#fff ;
 }
 #BotonFacebookIngreso {
   width: 60vw;
-  padding: 10px;
-  color: white;
-  background-color: #0040FF;
+  padding: 7px;
+  color:#000;
+  background-color:#fff ;
   font-family: "Alata","sans-serif" ;
 }
 @media (min-width:1050px){/*desktop*/
