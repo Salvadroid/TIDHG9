@@ -225,7 +225,7 @@ background-color:#fff ;
    /*hasta aca usuario.html*/
 
    /*JUEGO.HTML*/
- 
+
    .puntajes
    {
     background-color: #000;
@@ -252,7 +252,7 @@ background-color:#fff ;
    }
 
    /*HASTA ACA JUEGO-HTML*/
-   
+
 
    /*FAQ style*/
         #bodyFAQ{
@@ -312,6 +312,6 @@ background-color:#fff ;
         padding: 2rem;
 
       }
-      .accordion-item:active .respuesta{
+      .accordion-item:target .respuesta{
         max-height: 25rem;
       }
