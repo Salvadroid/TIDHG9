@@ -1,30 +1,25 @@
 *{margin: 0 auto;}
-/*  REGISTRO.HTML */
-.bodyRegistro {
-  background-image: url('../img/background.jpg');
-}
+body{width: 100%;
+background-image: url('../img/background.jpg');
+font-family: "Alata","sans-serif" ;}
 
-.registro{
-width: 70vw;
-padding: 5px;
+/*  REGISTRO.HTML */
+.seccion{
+width: 70vh;
+padding: 15px;
 border: 1px solid #fff;
 margin-top: 30px;
-font-family: "Alata","sans-serif" ;
-background-color: rgba(255,255,255,.8);
+background-color: rgba(255,255,255,.8);}
 
-
-}
 .registro h1{
-  font-family: "Alata","sans-serif" ;
   font-size: 10px;
 }
 
-.formularioR div {
+.subzona div {
   margin: 10px;
   padding: 2px;
 }
 #botEnviar {
-font-family: "Alata","sans-serif" ;
 color:#000;
 background-color:#fff ;
 }
@@ -34,7 +29,6 @@ background-color:#fff ;
   padding: 7px;
   color:#000;
   background-color:#fff ;
-  font-family: "Alata","sans-serif" ;
 }
 @media (min-width:1050px){/*desktop*/
   .registro {
@@ -43,32 +37,14 @@ background-color:#fff ;
   #botonFacebook{
     width: 30vw;
   }
-
-
 }
       /*TERMINA REGISTRO.HTML*/
+
       /*LOGIN.HTML*/
-.bodyLogin {
-  background-image: url('../img/background.jpg');
-}
-.login {
-  width: 70vw;
-  padding: 5px;
-  border: 1px solid #fff;
-  margin-top: 30px;
-  font-family: "Alata","sans-serif" ;
-  background-color: rgba(255,255,255,.8);
-}
 .login h1 {
-  font-family: "Alata","sans-serif" ;
   font-size: 10px;
 }
-.formularioL div {
-  margin: 10px;
-  padding: 2px;
-}
 #botInresar {
-  font-family: "Alata","sans-serif" ;
   color:#000;
   background-color:#fff ;
 }
@@ -77,7 +53,6 @@ background-color:#fff ;
   padding: 7px;
   color:#000;
   background-color:#fff ;
-  font-family: "Alata","sans-serif" ;
 }
 @media (min-width:1050px){/*desktop*/
   .login {
@@ -87,11 +62,9 @@ background-color:#fff ;
     width: 30vw;
   }
 }
+      /*TERMINA LOGIN.HTML*/
 
       /*HOME.HTML */
-      .bodyHome {
-        background-image: url('../img/background.jpg');
-      }
       #HomeSection{
         display: flex;
         flex-direction: column;
@@ -154,37 +127,34 @@ background-color:#fff ;
         margin-left:10%;
         margin-bottom: 10%
       }
-
-
      /*HASTA ACA HOME*/
 
      /*Usuario.html*/
-    .usuario{background-image: url('../img/background.jpg');
-    /* background-size: 500px 970px; */
-    background-size: cover;
-  }
+      #perfil{
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1rem;
+      }
+      nav{background-color: #D43535;
+      height: 50px;
+      width: 100%;}
 
-    body{
-        width: 100%;
-    }
+      ul{overflow: hidden;}
 
-    nav{background-color: #D43535;
-    height: 50px;
-  width: 100%;}
+      li{float:right;
+      width: 8%;
+      padding: 10px;
+      list-style: none;}
 
-    ul{overflow: hidden;}
+      a{display: block;
+      color: white;
+      font-size: 20px;}
 
-    li{float:right;
-    width: 8%;
-    padding: 10px;
-    list-style: none;}
-
-    a{display: block;
-    color: white;
-    font-size: 20px;
-    font-family: 'Alata', sans-serif;}
-
-    .circulo {
+    /*.circulo {
          width: 600px;
          height: 600px;
          -moz-border-radius: 50%;
@@ -195,6 +165,15 @@ background-color:#fff ;
          padding: 45px;
          margin-top: 100px;
          border: 3px solid grey;
+    }*/
+    .circulo {
+         width: 40vh;
+         height: 40vh;
+         border-radius: 50%;
+         background: white;
+         padding: 7vmax;
+         margin-top: 3.5vmax;
+         border:1 solid grey;
     }
 
     .logo{margin-top: 30px;
@@ -203,7 +182,7 @@ background-color:#fff ;
       margin-right: auto;
       border: 2px solid black;
       border-radius: 50%;
-      width: 300px;}
+      width: 70%;}
 
       @font-face {
    font-family: 'Penguin-Regular';
@@ -211,33 +190,121 @@ background-color:#fff ;
    font-weight: normal;
    font-style: normal;
   }
+
     .nombre{
     text-align: center;
     font-family: 'Penguin-Regular';
-    font-size: 65px;
-    margin-top: 55px;
-    color: #D43535;
-  }
+    font-size:3.0vmax;
+    color: #D43535;}
 
-    .horas{text-align: center;
-      margin-top: 10px;
-      font-size: 35px;
+    .puntos{text-align: center;
+      margin-top: 0.7vmax;
+      font-size: 1.7vmax;
       font-family: 'Alata',sans-serif;
       color:#D43535;
     }
    /*hasta aca usuario.html*/
 
+   /*Empieza el ranking*/
+   .rankingSection{
+        width: 24.5vmax;
+        max-height: 70rem;
+        margin-top: 3.5vmax;
+        margin-bottom: 3.5vmax;
+        background-color: rgba(255,255,255,.9);
+        border: grey .2vmax solid;
+        border-radius: .7vmax;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+      }
+      .tituloRanking, .puesto:before{
+        font-family: "Penguin-Regular", "sans-serif";
+        font-size: 3.5vmax;
+        font-weight: bold;
+        padding-left: .7vmax;
+        color: #D43535;
+      }
+      .puesto{
+        box-sizing: border-box;
+        width: 90%;
+        min-height: 5.5vmax;
+        background-color: pink; */
+        margin-left: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        margin: 2% auto;
+      }
+
+      #p1:before{
+        content: "1";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p2:before{
+        content: "2";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p3:before{
+        content: "3";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p4:before{
+        content: "4";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p5:before{
+        content: "5";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .avatar{
+       margin: 0 0 0 .5vmax;;
+       display: flex;
+       align-items: center;
+      }
+      .avatar img{
+        width: 4.4vmax;
+        height: 4.4vmax;
+        border-radius: 50%;
+      }
+      .datos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      ._nombre{
+        font-size: 1.5vmax;
+
+
+      }
    /*JUEGO.HTML*/
-   .fondo{
-     background-image: url('../img/background.jpg');
-     background-size: cover;
+
+
+
    }
    .puntajes
    {
     background-color: #000;
     border: 2px blue solid;
     font-size: 15px;
-    font-family: 'Alata',sans-serif;
    }
 
    .preguntas
@@ -246,7 +313,6 @@ background-color:#fff ;
     border: 2px blue solid;
     color: white;
     font-size: 14px;
-    font-family: 'Alata',sans-serif;
    }
 
    .botonjugar
@@ -254,7 +320,6 @@ background-color:#fff ;
     border: 2px blue solid;
     color: blue;
     font-size: 15px;
-    font-family: 'Alata',sans-serif;
    }
 
    /*HASTA ACA JUEGO-HTML*/
@@ -262,11 +327,7 @@ background-color:#fff ;
 
    /*FAQ style*/
         #bodyFAQ{
-        margin: 0;
-        padding: 0;
         box-sizing:inherit;
-        background-image: url('../img/background.jpg');
-        background-size: cover;
       }
       #htmlFAQ{
         font-size: 1vmax;
@@ -318,28 +379,12 @@ background-color:#fff ;
         padding: 2rem;
 
       }
-      .accordion-item:target .respuesta{
+      .accordion-item:active .respuesta{
         max-height: 25rem;
       }
       /*HASTA ACA FAQ STYLE*/
 
       /*CONTACTO.HTML*/
-      .contacto{
-        background-image: url('../img/background.jpg');
-        background-size: cover;
-        font-family: 'Alata', sans-serif;
-      }
-      .seccion{
-        width: 36vw;
-        padding: 5px;
-        border: 1px solid #fff;
-        margin-top: 30px;
-        background-color: rgba(255,255,255,.8);
-      }
-      .subzonas{
-        margin: 10px;
-        padding: 2px;
-      }
       .datos{
         margin-top: 10px;
         margin-bottom: 10px;
@@ -348,12 +393,72 @@ background-color:#fff ;
       }
       .com{font-family: times-new-roman,sans-serif;
       padding: 3px;
+      width: 100%;
+      }
+      .menu_bar{
+        display: none;
       }
       /*HASTA ACA CONTACTO.HTML*/
 
       /*MEDIA QUERIES*/
-      @media only screen and (min-device-width:375px) and (max-device-width:425px){
+      @media only screen and (min-device-width:405px) and (max-device-width:960px){
+        *{margin:0;
+        padding: 0;}
         nav{
+        width: 100%;
+        height: 6vh;}
 
+        ul{
+        margin: 0;
+        padding: 0;
+        padding-top: 10px;
+        height: 100%;}
+
+        li{
+        width: 16%;
+        padding: 0;}
+
+        a{
+        width: 100%;
+        display: block;
+        font-size: 16px;
+        height: 6vh;}
+
+        .nombre{
+          font-size: 5.0vmax;
         }
-      }
+        /*header nav{
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        background: none;
+        }
+        header nav ul li{
+          display:none;
+          float: none;
+          width:100%;
+        }
+        .menu_bar{
+          display: block;
+          width: 100%;
+          text-decoration: none;
+        }
+        .menu_bar .bt-menu{
+          display: block;
+          padding: 20px;
+          background: #D43535;
+          color:white;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 25px;
+          box-sizing: border-box;
+        }
+        .menu_bar span{
+          float: right;
+          font-size: 40px;
+        }
+        .menu_bar:focus nav ul li{
+            display:block;
+            border-bottom:1px solid rgba(255,255,255,.3);
+            background: red;
+        }*/
