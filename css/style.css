@@ -86,6 +86,8 @@ background-color:#fff ;
   #BotonFacebookIngreso{
     width: 30vw;
   }
+
+
 }
 
       /*HOME.HTML */
@@ -159,10 +161,8 @@ background-color:#fff ;
      /*HASTA ACA HOME*/
 
      /*Usuario.html*/
-    .usuario{background-image: url('../img/background.jpg');
-    /* background-size: 500px 970px; */
-    background-size: cover;
-  }
+    .usuario{background-image: url('../img/joysticks.jpg');
+    background-size: 500px 970px;}
 
     body{
         width: 100%;
@@ -176,8 +176,8 @@ background-color:#fff ;
          border-radius: 50%;
          background: white;
          z-index: 5;
-         padding: 45px;
-         margin-top: 55px;
+         padding: 100px;
+         margin-top: 150px;
          border: 3px solid grey;
     }
 
@@ -209,13 +209,12 @@ background-color:#fff ;
    font-weight: normal;
    font-style: normal;
   }
+
     .nombre{
     text-align: center;
     font-family: 'Penguin-Regular';
-    font-size: 40px;
-    margin-top: 10px;
-    color: #D43535;
-  }
+    font-size: 50px;
+    color: #D43535;}
 
     .horas{text-align: center;
       margin-top: 10px;
@@ -226,7 +225,13 @@ background-color:#fff ;
    /*hasta aca usuario.html*/
 
    /*JUEGO.HTML*/
+ 
+   .bodyJuego
+   {
+    background-image: url("../img/background.jpg");
+    
 
+   }
    .puntajes
    {
     background-color: #000;
@@ -253,7 +258,7 @@ background-color:#fff ;
    }
 
    /*HASTA ACA JUEGO-HTML*/
-
+   
 
    /*FAQ style*/
         #bodyFAQ{
@@ -313,33 +318,6 @@ background-color:#fff ;
         padding: 2rem;
 
       }
-      .accordion-item:target .respuesta{
+      .accordion-item:active .respuesta{
         max-height: 25rem;
       }
-      /*HASTA ACA FAQ STYLE*/
-
-      /*CONTACTO.HTML*/
-      .contacto{
-        background-image: url('../img/background.jpg');
-        background-size: cover;
-        font-family: 'Alata', sans-serif;
-      }
-      .seccion{
-        width: 36vw;
-        padding: 5px;
-        border: 1px solid #fff;
-        margin-top: 30px;
-        background-color: rgba(255,255,255,.8);
-      }
-      .subzonas{
-        margin: 10px;
-        padding: 2px;
-      }
-      .datos{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        color: blue;
-        text-decoration: none;
-      }
-      .com{font-family: times-new-roman,sans-serif;
-      padding: 3px;}
