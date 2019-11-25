@@ -161,25 +161,31 @@ background-color:#fff ;
      /*HASTA ACA HOME*/
 
      /*Usuario.html*/
-    .usuario{background-image: url('../img/joysticks.jpg');
-    background-size: 500px 970px;}
+     #bodyUser{
+       margin:0;
+     }
+    .usuario{background-image: url('../img/background.jpg');
+    background-size: cover;}
 
-    body{
-        width: 100%;
+    #perfil{
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1rem;
     }
-
     .circulo {
-         width: 400px;
-         height: 400px;
-         -moz-border-radius: 50%;
-         -webkit-border-radius: 50%;
+         width: 28vmax;
+         height: 28vmax;
          border-radius: 50%;
-         background: white;
-         z-index: 5;
-         padding: 100px;
-         margin-top: 150px;
-         border: 3px solid grey;
+         background: rgba(255,255,255,.9);
+         padding: 7vmax;
+         margin-top: 3.5vmax;
+         border: 0.2 solid grey;
     }
+
 
     nav{background-color: #D43535;
     height: 50px;}
@@ -196,11 +202,14 @@ background-color:#fff ;
     font-size: 20px;
     font-family: 'Alata', sans-serif;}
 
-    .logo{margin-top: 30px;
+    .logo{
+      width:20vmax;
+      height:20vmax;
+      margin-top: 2vmax;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      border: 2px solid black;
+      border: .2vmax solid black;
       border-radius: 50%;}
 
       @font-face {
@@ -213,23 +222,114 @@ background-color:#fff ;
     .nombre{
     text-align: center;
     font-family: 'Penguin-Regular';
-    font-size: 50px;
+    font-size: 3.5vmax;
     color: #D43535;}
 
-    .horas{text-align: center;
-      margin-top: 10px;
-      font-size: 25px;
+    .puntos{text-align: center;
+      margin-top: 0.7vmax;
+      font-size: 1.7vmax;
       font-family: 'Alata',sans-serif;
       color:#D43535;
     }
    /*hasta aca usuario.html*/
+   /*Empieza el ranking*/
+   .rankingSection{
+        width: 24.5vmax;
+        max-height: 70rem;
+        margin-top: 3.5vmax;
+        margin-bottom: 3.5vmax;
+        background-color: rgba(255,255,255,.9);
+        border: grey .2vmax solid;
+        border-radius: .7vmax;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
+      }
+      .tituloRanking, .puesto:before{
+        font-family: "Penguin-Regular", "sans-serif";
+        font-size: 3.5vmax;
+        font-weight: bold;
+        padding-left: .7vmax;
+        color: #D43535;
+      }
+      .puesto{
+        box-sizing: border-box;
+        width: 90%;
+        min-height: 5.5vmax;
+        background-color: pink; */
+        margin-left: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        margin: 2% auto;
+      }
+
+      #p1:before{
+        content: "1";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p2:before{
+        content: "2";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p3:before{
+        content: "3";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p4:before{
+        content: "4";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #p5:before{
+        content: "5";
+        border-left: .2vmax solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .avatar{
+       margin: 0 0 0 .5vmax;;
+       display: flex;
+       align-items: center;
+      }
+      .avatar img{
+        width: 4.4vmax;
+        height: 4.4vmax;
+        border-radius: 50%;
+      }
+      .datos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: "Alata", "sans-serif";
+      }
+      ._nombre{
+        font-family: "Alata", "sans-serif";
+        font-size: 1.5vmax;
+
+
+      }
    /*JUEGO.HTML*/
- 
+
    .bodyJuego
    {
     background-image: url("../img/background.jpg");
-    
+
 
    }
    .puntajes
@@ -258,7 +358,7 @@ background-color:#fff ;
    }
 
    /*HASTA ACA JUEGO-HTML*/
-   
+
 
    /*FAQ style*/
         #bodyFAQ{
