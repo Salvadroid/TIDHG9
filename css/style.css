@@ -168,21 +168,9 @@ background-color:#fff ;
         width: 100%;
     }
 
-    .circulo {
-         width: 400px;
-         height: 400px;
-         -moz-border-radius: 50%;
-         -webkit-border-radius: 50%;
-         border-radius: 50%;
-         background: white;
-         z-index: 5;
-         padding: 45px;
-         margin-top: 55px;
-         border: 3px solid grey;
-    }
-
     nav{background-color: #D43535;
-    height: 50px;}
+    height: 50px;
+  width: 100%;}
 
     ul{overflow: hidden;}
 
@@ -196,12 +184,26 @@ background-color:#fff ;
     font-size: 20px;
     font-family: 'Alata', sans-serif;}
 
+    .circulo {
+         width: 600px;
+         height: 600px;
+         -moz-border-radius: 50%;
+         -webkit-border-radius: 50%;
+         border-radius: 50%;
+         background: white;
+         z-index: 5;
+         padding: 45px;
+         margin-top: 100px;
+         border: 3px solid grey;
+    }
+
     .logo{margin-top: 30px;
       display: block;
       margin-left: auto;
       margin-right: auto;
       border: 2px solid black;
-      border-radius: 50%;}
+      border-radius: 50%;
+      width: 300px;}
 
       @font-face {
    font-family: 'Penguin-Regular';
@@ -212,21 +214,24 @@ background-color:#fff ;
     .nombre{
     text-align: center;
     font-family: 'Penguin-Regular';
-    font-size: 40px;
-    margin-top: 10px;
+    font-size: 65px;
+    margin-top: 55px;
     color: #D43535;
   }
 
     .horas{text-align: center;
       margin-top: 10px;
-      font-size: 25px;
+      font-size: 35px;
       font-family: 'Alata',sans-serif;
       color:#D43535;
     }
    /*hasta aca usuario.html*/
 
    /*JUEGO.HTML*/
-
+   .fondo{
+     background-image: url('../img/background.jpg');
+     background-size: cover;
+   }
    .puntajes
    {
     background-color: #000;
@@ -342,4 +347,13 @@ background-color:#fff ;
         text-decoration: none;
       }
       .com{font-family: times-new-roman,sans-serif;
-      padding: 3px;}
+      padding: 3px;
+      }
+      /*HASTA ACA CONTACTO.HTML*/
+
+      /*MEDIA QUERIES*/
+      @media only screen and (min-device-width:375px) and (max-device-width:425px){
+        nav{
+
+        }
+      }
