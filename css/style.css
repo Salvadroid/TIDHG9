@@ -20,6 +20,27 @@ a{display: block;
 color: white;
 font-size: 20px;}
 
+/*el footer*/
+footer {
+width: 100%;
+margin-top:  100px;
+bottom: 0;
+}
+footer p {
+font-family:"Alata","sans-serif" ;
+font-size: 10px;
+background-color: rgba(0,0,0,.8);
+color: #fff;
+padding: 15px;
+display: flex;
+justify-content: center;
+}
+@media (min-width:1050px){
+footer p{
+ font-size: 15px;
+}
+}
+
 /*  REGISTRO.HTML */
 .seccion{
 width: 70vh;
@@ -136,7 +157,7 @@ background-color:#fff ;
       #infoMasBotonJ article p {
         width: 80%;
         font-family: "Amatic SC", "sans-serif";
-        font-size:7vh;
+        font-size:4vmax;
         background-color: rgba(255,255,255,.8);
         padding: 1.5vw;
         border-radius: 1vw;
