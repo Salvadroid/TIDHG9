@@ -3,6 +3,23 @@ body{width: 100%;
 background-image: url('../img/background.jpg');
 font-family: "Alata","sans-serif" ;}
 
+/*el nav*/
+nav{
+background-color: #D43535;
+height: 50px;
+width: 100%;}
+
+ul{overflow: hidden;}
+
+li{float:right;
+width: 8%;
+padding: 10px;
+list-style: none;}
+
+a{display: block;
+color: white;
+font-size: 20px;}
+
 /*  REGISTRO.HTML */
 .seccion{
 width: 70vh;
@@ -130,59 +147,38 @@ background-color:#fff ;
      /*HASTA ACA HOME*/
 
      /*Usuario.html*/
-      #perfil{
+     #perfil{
       width: 100%;
-      height: 100vh;
+      height: 100vmax;
       margin: 0;
       display: flex;
-      flex-direction: column;
+      flex-direction:column;
       align-items: center;
       padding-top: 1rem;
       }
-      nav{background-color: #D43535;
-      height: 50px;
-      width: 100%;}
 
-      ul{overflow: hidden;}
-
-      li{float:right;
-      width: 8%;
-      padding: 10px;
-      list-style: none;}
-
-      a{display: block;
-      color: white;
-      font-size: 20px;}
-
-    /*.circulo {
-         width: 600px;
-         height: 600px;
-         -moz-border-radius: 50%;
-         -webkit-border-radius: 50%;
-         border-radius: 50%;
-         background: white;
-         z-index: 5;
-         padding: 45px;
-         margin-top: 100px;
-         border: 3px solid grey;
-    }*/
     .circulo {
-         width: 40vh;
-         height: 40vh;
+         width: 30vmax;
+         height: 30vmax;
          border-radius: 50%;
          background: white;
          padding: 7vmax;
          margin-top: 3.5vmax;
          border:1 solid grey;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
     }
 
-    .logo{margin-top: 30px;
+
+    .logo{
+      margin-top: 1vmax;
       display: block;
       margin-left: auto;
       margin-right: auto;
-      border: 2px solid black;
+      border: .2vmax solid black;
       border-radius: 50%;
-      width: 70%;}
+      width: 50%;}
 
       @font-face {
    font-family: 'Penguin-Regular';
@@ -194,7 +190,7 @@ background-color:#fff ;
     .nombre{
     text-align: center;
     font-family: 'Penguin-Regular';
-    font-size:3.0vmax;
+    font-size:3vmax;
     color: #D43535;}
 
     .puntos{text-align: center;
@@ -230,8 +226,8 @@ background-color:#fff ;
       .puesto{
         box-sizing: border-box;
         width: 90%;
+        background-color: #e1d1dd;
         min-height: 5.5vmax;
-        background-color: pink; */
         margin-left: 5%;
         display: flex;
         flex-direction: row;
@@ -239,7 +235,7 @@ background-color:#fff ;
         text-align: left;
         margin: 2% auto;
       }
-
+    /*aca los bordes y los puestos del ranking*/
       #p1:before{
         content: "1";
         border-left: .2vmax solid grey;
@@ -292,8 +288,8 @@ background-color:#fff ;
       }
       ._nombre{
         font-size: 1.5vmax;
-
-
+        font-family: 'Alata',sans-serif;
+        color: #1a997b;
       }
    /*JUEGO.HTML*/
 
@@ -379,7 +375,7 @@ background-color:#fff ;
         padding: 2rem;
 
       }
-      .accordion-item:active .respuesta{
+      .accordion-item:target .respuesta{
         max-height: 25rem;
       }
       /*HASTA ACA FAQ STYLE*/
@@ -411,7 +407,7 @@ background-color:#fff ;
         ul{
         margin: 0;
         padding: 0;
-        padding-top: 10px;
+        /* padding-top: 10px; este padding desfasa las letras cuando se achica */
         height: 100%;}
 
         li{
@@ -423,42 +419,3 @@ background-color:#fff ;
         display: block;
         font-size: 16px;
         height: 6vh;}
-
-        .nombre{
-          font-size: 5.0vmax;
-        }
-        /*header nav{
-        width: 80%;
-        height: 100vh;
-        position: fixed;
-        background: none;
-        }
-        header nav ul li{
-          display:none;
-          float: none;
-          width:100%;
-        }
-        .menu_bar{
-          display: block;
-          width: 100%;
-          text-decoration: none;
-        }
-        .menu_bar .bt-menu{
-          display: block;
-          padding: 20px;
-          background: #D43535;
-          color:white;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 25px;
-          box-sizing: border-box;
-        }
-        .menu_bar span{
-          float: right;
-          font-size: 40px;
-        }
-        .menu_bar:focus nav ul li{
-            display:block;
-            border-bottom:1px solid rgba(255,255,255,.3);
-            background: red;
-        }*/
