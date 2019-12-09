@@ -15,8 +15,8 @@
       <ul>
         <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
         <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Registro.html" style="text-decoration:none;">Registro</a></li>
-        <li><a href="Login.html" style="text-decoration:none;">Login</a></li>
+        <li><a href="Registro.php" style="text-decoration:none;">Registro</a></li>
+        <li><a href="Login.php" style="text-decoration:none;">Login</a></li>
         <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
         <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
       </ul>
