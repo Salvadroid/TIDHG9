@@ -1,4 +1,5 @@
 <?php
+require 'funciones.php';
 $username="";
 $email="";
 $errores=[];
@@ -36,21 +37,10 @@ if($_POST){
         $errores["contra"]="La contraseña no es igual a la repeticion!";
       }
     }
-    if(!$errores){
-        $arrayUsuario=[
-          "nombre" => trim($_POST["nombre"]),
-          "email" => $_POST["email"],
-          "password" => password_hash($_POST["password"],PASSWORD_DEFAULT)
-          
-        ];
-        
-        $archivoJson=file_get_contents("usuarios.json");
-        $archivo=json_decode($archivoJson,true);
-        $archivo[]=$arrayUsuario;
-        
-        $jsonUsuarios=json_encode($archivo);
+    if(!$errores){ // si no hay errores, guardamos los datos del usuario en el archivo .json
 
-        file_put_contents("usuarios.json",$jsonUsuarios);
+        $arrayUsuario=datosDeNuevoUsuario($_POST);
+        enviarABaseDeDatos($arrayUsuario);
         header("location:Usuario.php");
     }
     else{

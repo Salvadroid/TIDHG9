@@ -1,3 +1,14 @@
+<?php
+require 'funciones.php';
+session_start();
+$miBaseDeDatos = BDDlimpia('usuarios.json');  //esto es un array asociativo.
+$arrayDeUsuarios = listaDeUsersDe_($miBaseDeDatos);// esto es un array de arrays.
+$usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST la función guarda los datos del usuario ingresado(con sus campos nombre, email y password)
+$_SESSION['nombre']= $usuarioBuscado['nombre']; //acá guardo en session, SOLAMENTE el nombre del usuario.
+pre($_SESSION);
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +41,7 @@
 
       <article class="">
         <div class="subzona">
-          <form class="" action="index.html" method="post">
+          <form class="" action="Login.php" method="post">
             <div class="">
               <h2>Ingresar con Email</h2>
             </div>
@@ -41,6 +52,11 @@
             <div class="">
               <label for="password">Contraseña <br></label>
               <input type="password" name="password" value="">
+              <?php if($_POST && !$usuarioBuscado): ?>
+                <small>Usuario o contraseña inválidos.</small>
+              <?php else : ?>
+                <small></small>
+              <?php endif; ?>
             </div>
             <div class="">
               <label for="recordar">Recordar contraseña</label>
