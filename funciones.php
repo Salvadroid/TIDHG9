@@ -12,6 +12,7 @@ function dnd($unArray){
 //____________________________________________________________
 
 // función para guardar datos de user en una variable
+/*
 function datosDeNuevoUsuario($unArray){
   if($unArray){
     $usuario = [
@@ -21,7 +22,7 @@ function datosDeNuevoUsuario($unArray){
     ];
     return $usuario;
   }
-}
+}*/
 //función para mandar el array con datos de user a un archivo json
 function enviarABaseDeDatos($unArray){
   if ($unArray){

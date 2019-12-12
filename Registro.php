@@ -37,9 +37,28 @@ if($_POST){
         $errores["contra"]="La contraseña no es igual a la repeticion!";
       }
     }
+    if($_FILES){
+      if($_FILES["imagen"]["error"] != 0){
+        $errores["imagen"]="Hubo un error al cargar la imagen.";
+      } else {
+        $ext = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
+        if ($ext != "jpg" && $ext != "jpeg" && $ext != "png") {
+          $errores["imagen"]= "La imagen debe ser jpg, jpeg o png.";
+        } else {
+          $nombreImagen = uniqid('img_') . '.' . $ext;
+          $rutaImagen=dirname(__FILE__) . "/imgUsuarios/" . $nombreImagen;
+          move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagen );
+          
+        }
+      }
+    }
     if(!$errores){ // si no hay errores, guardamos los datos del usuario en el archivo .json
-
-        $arrayUsuario=datosDeNuevoUsuario($_POST);
+      $arrayUsuario=[
+        "nombre" => trim($_POST["nombre"]),
+        "email" => $_POST["email"],
+        "password" => password_hash($_POST["password"],PASSWORD_DEFAULT),
+        "imagen" => $rutaImagen
+      ];
         enviarABaseDeDatos($arrayUsuario);
         header("location:Usuario.php");
     }
@@ -80,39 +99,57 @@ if($_POST){
         <article class="">
           <div class="subzona">
 
-            <form class="" action="Registro.php" method="POST">
+          <form class="" action="Registro.php" method="POST"  enctype="multipart/form-data">
 
-              <div class="">
-                  <h2>Registrarse con nombre de usuario</h2>
-              </div>
-              <div class="">
-                  <label class="" for="nombre">Nombre <br></label>
-                  <input class="" type="text" name="nombre" value="<?=$username ?>" required>
-              </div>
-              <div class="">
-                  <label class="" for="email">Email <br></label>
-                  <input class="" type="email" name="email" value="<?=$email ?>" required>
-              </div>
-              <div class="">
-                  <label class="" for="password">Contraseña<br></label>
-                  <input class="" type="password" name="password" value="" required>
-              </div>
-              <div class="">
-                  <label class="" for="repetirpass">Repetir contraseña<br></label>
-                  <input class="" type="password" name="repetirpass" value="" required >
-              </div>
-              <div class="">
-                  <button id="botEnviar" type="submit" name="button">Enviar</button>
-              </div>
-              <div class="">
-                  <h2 class="">Registrarse con Facebook</h2>
+<div class="">
+    <h2>Registrarse con nombre de usuario</h2>
+</div>
+<div class="">
+    <label class="" for="nombre">Nombre <br></label>
+    <input type='text' name="nombre" value="<?= isset($_POST["nombre"]) ? $_POST["nombre"] : '' ?>"> <br>
+      <?php if(isset($errores["nombre"])): ?> 
+      <span  style= "color:red; font-size:12px;"><?= $errores["nombre"]?></span>
+      <?php endif; ?>
+</div>
+<div class="">
+    <label class="" for="email">Email <br></label>
+    <input  type='text' name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>"><br/>
+      <?php if(isset($errores['email'])): ?>
+      <span style= "color:red; font-size:12px;"  ><?= $errores['email']?></span>
+      <?php endif; ?>
+</div>
+<div class="">
+    <label class="" for="password">Contraseña<br></label>
+    <input  type='password' name='password'><br>
+      <?php if(isset($errores['contra'])): ?>
+      <span  style= "color:red; font-size:12px;"><?= $errores['contra']?></span>
+      <?php endif; ?>
+</div>
+<div class="">
+    <label class="" for="repetirpass">Repetir contraseña<br></label>
+    <input  type="password" name="repetirpass"><br>
+     
+</div>
+<div>
+     <label class="" for="imagen">Foto de usuario:<br></label>
+     <input  type="file" name="imagen"><br>
+      <?php if(isset($errores["imagen"])): ?>
+      <span  style= "color:red; font-size:12px;"><?= $errores["imagen"]?></span>
+      <?php endif; ?>
+</div>
+<div class="">
+    <button id="botEnviar" type="submit" name="button">Enviar</button>
+</div>
+<div class="">
+    <h2 class="">Registrarse con Facebook</h2>
 
-              </div>
-              <div class="">
-                  <button id="botonFacebook" type="submit" name="button">Registrarse con Facebook</button>
-              </div>
+</div>
+<div class="">
+    <button id="botonFacebook" type="submit" name="button">Registrarse con Facebook</button>
+</div>
 
-           </form>
+</form>
+
          </div>
         </article>
         </div>
