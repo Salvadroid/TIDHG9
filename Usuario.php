@@ -1,3 +1,6 @@
+<?php 
+session_start();
+var_dump($_SESSION); ?>
 <!DOCTYPE html>
 <html lang="en" class="usuario">
 <head>
@@ -19,6 +22,7 @@
         <li><a href="Login.php" style="text-decoration:none;">Login</a></li>
         <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
         <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
+        <li><a href="logout.php" style="text-decoration:none;">Logout</a></li>
       </ul>
     </nav>
   </header>
