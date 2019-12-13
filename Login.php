@@ -15,17 +15,11 @@ if(empty($_POST["password"]) ) {
     $erroresLogin['email'] = "El email es obligatorio";
   } elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     $erroresLogin['email'] = "El email ingresado no es válido";
-  }/*elseif(!password_verify($_POST["password"], $usuarioBuscado["password"])){
-    $erroresLogin["password"]="Contraseña invalida";
-  }*/
+  }
 
   
   if(!$erroresLogin){
-    //ESTO ESTABA HACIENDO PARA LAS COOKIES Y SESSION PEROALGO NO FUNCIONA
-    //APARTE HABIA HECHO UN ARCHIVO LOGOUT PARA CERRAR SESSION Y UN ARCHIVO NAV DONDE 
-    //DESAPARECIA LOGIN Y USUARIO SI ESTABA LOGUEADO... PERO NO FUNCIONABA,
-    // ESTO DE SESSION Y COOKIE SAQUE DE LA CLASE REMOTA DEL JUEV DE HERNI  
-    //
+    
     $_SESSION['nombre']= $usuarioBuscado['nombre']; //acá guardo en session, SOLAMENTE el nombre del usuario.
     $_SESSION['imagen']=$usuarioBuscado['imagen'];
     header('Location: Usuario.php');
@@ -55,16 +49,7 @@ if(empty($_POST["password"]) ) {
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="Usuario.html" style="text-decoration:none;">Usuario</a></li>
-        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-        <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Registro.html" style="text-decoration:none;">Registro</a></li>
-        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
-      </ul>
-    </nav>
+    <?php require("nav.php");?>
     <h1 class="seccion">Ingresar</h1>
   </header>
   <section>

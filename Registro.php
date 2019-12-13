@@ -80,16 +80,7 @@ if($_POST){
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="Usuario.html" style="text-decoration:none;">Usuacontra"rio</a></li>
-        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-        <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Login.html" style="text-decoration:none;">Login</a></li>
-        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
-      </ul>
-    </nav>
+  <?php require("nav.php");?>
       <h1 class="seccion">Registrarse</h1>
     </header>
     <section>

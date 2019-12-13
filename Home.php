@@ -11,17 +11,7 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="Usuario.html" style="text-decoration:none;">Usuario</a></li>
-        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-        <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Registro.html" style="text-decoration:none;">Registro</a></li>
-        <li><a href="Login.html" style="text-decoration:none;">Login</a></li>
-        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-
-      </ul>
-    </nav>
+    <?php require("nav.php");?>
   </header>
   <section id="HomeSection">
       <div class="titulo">
