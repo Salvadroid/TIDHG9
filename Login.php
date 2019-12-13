@@ -27,6 +27,7 @@ if(empty($_POST["password"]) ) {
     // ESTO DE SESSION Y COOKIE SAQUE DE LA CLASE REMOTA DEL JUEV DE HERNI  
     //
     $_SESSION['nombre']= $usuarioBuscado['nombre']; //acá guardo en session, SOLAMENTE el nombre del usuario.
+    $_SESSION['imagen']=$usuarioBuscado['imagen'];
     header('Location: Usuario.php');
     /*if(isset($_POST["recordarme"]) && $_POST["recordarme"] == "recordar"){
     //creo cookies
