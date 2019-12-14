@@ -4,36 +4,9 @@ session_start();
 $miBaseDeDatos = BDDlimpia('usuarios.json');  //esto es un array asociativo.
 $arrayDeUsuarios = listaDeUsersDe_($miBaseDeDatos);// esto es un array de arrays.
 $usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST la función guarda los datos del usuario ingresado(con sus campos nombre, email y password)
-
+$_SESSION['nombre']= $usuarioBuscado['nombre']; //acá guardo en session, SOLAMENTE el nombre del usuario.
 pre($_SESSION);
-//VALIDACION LOGIN
-if($_POST){
-  $erroresLogin = [];
-if(empty($_POST["password"]) ) {
-    $erroresLogin['password'] = "La contraseña es obligatoria";
-  }elseif(empty($_POST["email"])){
-    $erroresLogin['email'] = "El email es obligatorio";
-  } elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    $erroresLogin['email'] = "El email ingresado no es válido";
-  }
-
-  
-  if(!$erroresLogin){
-    
-    $_SESSION['nombre']= $usuarioBuscado['nombre']; //acá guardo en session, SOLAMENTE el nombre del usuario.
-    $_SESSION['imagen']=$usuarioBuscado['imagen'];
-    header('Location: Usuario.php');
-    /*if(isset($_POST["recordarme"]) && $_POST["recordarme"] == "recordar"){
-    //creo cookies
-   setcookie("userEmail", $usuarioBuscado["email"], time()+ 60*60*24*7*30);
-    setcookie("userPass", $usuarioBuscado["password"], time()+ 60*60*24*7*30);
-    header('Location: Usuario.php');
-  }else {
-    header('Location: Usuario.php');
-  }*/
- }
- }
- 
+//La validación nueva está dentro del html. ↓↓↓↓↓
  ?>
 
 <!DOCTYPE html>
@@ -49,7 +22,16 @@ if(empty($_POST["password"]) ) {
 </head>
 <body>
   <header>
-    <?php require("nav.php");?>
+    <nav>
+      <ul>
+        <li><a href="Usuario.html" style="text-decoration:none;">Usuario</a></li>
+        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
+        <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
+        <li><a href="Registro.html" style="text-decoration:none;">Registro</a></li>
+        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
+        <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
+      </ul>
+    </nav>
     <h1 class="seccion">Ingresar</h1>
   </header>
   <section>
@@ -59,22 +41,20 @@ if(empty($_POST["password"]) ) {
 
       <article class="">
         <div class="subzona">
-        <form class="" action="Login.php" method="post">
+          <form class="" action="Login.php" method="post">
             <div class="">
               <h2>Ingresar con Email</h2>
             </div>
             <div class="">
               <label for="email">Email <br></label>
-              <input  type='text' name='email' value="<?= isset($_POST['email']) ? $_POST['email'] : '' ?>"><br/>
-             <?php if(isset($erroresLogin['email'])): ?>
-             <span style= "color:red; font-size:12px;"  ><?= $erroresLogin['email']?></span>
-             <?php endif; ?>
+              <input type="email" name="email" value="">
             </div>
             <div class="">
               <label for="password">Contraseña <br></label>
-              <input  type='password' name='password'><br>
-              <?php if(isset($erroresLogin['password'])): ?>
-              <span  style= "color:red; font-size:12px;"><?= $erroresLogin['password']?></span>
+              <input type="password" name="password" value="">
+              <!-- <?php if($_POST && !$usuarioBuscado): ?> ← Acá, si $_POST existe, pero $usuarioBuscado es false, entonces se deniega el acceso. -->
+                <small style="color:red;"><br>El nombre de usuario o contraseña son incorrectos.<br>Por favor inténtalo de nuevo.</small>
+              <!-- <?php else :header("location:Usuario.php"); ?> ← Si $_POST existe y $usuarioBuscado tambien, entonces se almacena(en la funcion de arriba) y se redirige al perfil. -->
               <?php endif; ?>
             </div>
             <div class="">
