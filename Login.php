@@ -24,12 +24,12 @@ pre($_SESSION);
   <header>
     <nav>
       <ul>
-        <li><a href="Usuario.html" style="text-decoration:none;">Usuario</a></li>
+        <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
         <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
         <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Registro.html" style="text-decoration:none;">Registro</a></li>
+        <li><a href="Registro.php" style="text-decoration:none;">Registro</a></li>
         <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
+        <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
       </ul>
     </nav>
     <h1 class="seccion">Ingresar</h1>

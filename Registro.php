@@ -48,7 +48,7 @@ if($_POST){
           $nombreImagen = uniqid('img_') . '.' . $ext;
           $rutaImagen=dirname(__FILE__) . "/imgUsuarios/" . $nombreImagen;
           move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagen );
-          
+
         }
       }
     }
@@ -82,12 +82,12 @@ if($_POST){
   <header>
     <nav>
       <ul>
-        <li><a href="Usuario.html" style="text-decoration:none;">Usuacontra"rio</a></li>
+        <li><a href="Usuario.php" style="text-decoration:none;">Usuacontra"rio</a></li>
         <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
         <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Login.html" style="text-decoration:none;">Login</a></li>
+        <li><a href="Login.php" style="text-decoration:none;">Login</a></li>
         <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.html" style="text-decoration:none;">Home</a></li>
+        <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
       </ul>
     </nav>
       <h1 class="seccion">Registrarse</h1>
@@ -107,7 +107,7 @@ if($_POST){
 <div class="">
     <label class="" for="nombre">Nombre <br></label>
     <input type='text' name="nombre" value="<?= isset($_POST["nombre"]) ? $_POST["nombre"] : '' ?>"> <br>
-      <?php if(isset($errores["nombre"])): ?> 
+      <?php if(isset($errores["nombre"])): ?>
       <span  style= "color:red; font-size:12px;"><?= $errores["nombre"]?></span>
       <?php endif; ?>
 </div>
@@ -128,7 +128,7 @@ if($_POST){
 <div class="">
     <label class="" for="repetirpass">Repetir contraseña<br></label>
     <input  type="password" name="repetirpass"><br>
-     
+
 </div>
 <div>
      <label class="" for="imagen">Foto de usuario:<br></label>
