@@ -59,12 +59,21 @@ if($_POST){
         "password" => password_hash($_POST["password"],PASSWORD_DEFAULT),
         "imagen" => $rutaImagen
       ];
+      //cookies y session para registro
+      session_start();
+    if($arrayUsuario && isset($_POST["recordarme"])){
+      crearSesionPara_($arrayUsuario);
+      crearCookiePara_($arrayUsuario);
+    } elseif($_POST && $arrayUsuario){
+      crearSesionPara_($arrayUsuario);
+    }
         enviarABaseDeDatos($arrayUsuario);
         header("location:Usuario.php");
     }
     else{
       var_dump($errores);
     }
+    
 }
 ?>
 <!DOCTYPE html>
@@ -80,16 +89,7 @@ if($_POST){
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
-        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-        <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Login.php" style="text-decoration:none;">Login</a></li>
-        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
-      </ul>
-    </nav>
+  <?php require("nav.php");?>
       <h1 class="seccion">Registrarse</h1>
     </header>
     <section>
@@ -137,6 +137,10 @@ if($_POST){
       <span  style= "color:red; font-size:12px;"><?= $errores["imagen"]?></span>
       <?php endif; ?>
 </div>
+<div class="">
+              <label for="recordar">Recordar contraseña</label>
+              <input type="checkbox" name="recordarme" value="0">
+            </div>
 <div class="">
     <button id="botEnviar" type="submit" name="button">Enviar</button>
 </div>

@@ -1,3 +1,8 @@
+<?php
+ session_start(); 
+var_dump($_SESSION);"br";
+var_dump($_COOKIE);
+?>
 <!DOCTYPE html>
 <html id="htmlFAQ"lang="en">
 
@@ -13,16 +18,7 @@
 
 <body id="bodyFAQ">
   <header>
-    <nav>
-      <ul>
-        <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
-        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-        <li><a href="Registro.php" style="text-decoration:none;">Registro</a></li>
-        <li><a href="Login.php" style="text-decoration:none;">Login</a></li>
-        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
-
-      </ul>
+  <?php require("nav.php");?>
     </nav>
   </header>
   <section class="sectionFaq">

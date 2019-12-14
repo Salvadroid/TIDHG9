@@ -1,3 +1,8 @@
+<?php
+ session_start(); 
+var_dump($_SESSION);"br";
+var_dump($_COOKIE);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,17 +20,7 @@
     </head>
     <body class="bodyJuego">
         <header>
-          <nav>
-            <ul>
-              <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
-              <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
-              <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-              <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-              <li><a href="Registro.php" style="text-decoration:none;">Registro</a></li>
-              <li><a href="Login.php" style="text-decoration:none;">Login</a></li>
-              <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-
-            </ul>
+        <?php require("nav.php");?>
           </nav>
         </header>
         <br>
@@ -33,24 +28,18 @@
         <!-- MODIFICAR PREGUNTAS -->
         <article class="container preguntas">
             <div class= "row p-2">
-              <div> PREGUNTA </div>
+              <div> PREGUNTA Nº 1</div>
             </div>
             <div class= "row justify-content-center">
-                <input class ="col-10 text-center"  type="text" name="pregunta" id="pregunta">
+                <input class ="col-10 text-center"  type="text" name="pregunta" id="pregunta" placeholder= "¿En qué año comenzó la segunda guerra mundial?">
             </div>
-            <div class= "row p-1 justify-content-center">
-                    <div> RESPUESTAS </div>
+            <div class= "row p-2 justify-content-center">
+                <input class ="col-3 text-center"  type="text" name="pregunta1" id="pregunta1" placeholder= "1929">
+                <input class ="col-3 text-center"  type="text" name="pregunta2" id="pregunta2" placeholder= "1939">
+                <input class ="col-3 text-center"  type="text" name="pregunta3" id="pregunta3" placeholder= "1949">
+                <input class ="col-3 text-center"  type="text" name="pregunta4" id="pregunta4" placeholder= "1959">
             </div>
-            <div class= "row p-1 justify-content-center">
-                <input class ="col-3 text-center"  type="text" name="respuesta1" id="respuesta1">
-                <input class ="col-3 text-center"  type="text" name="respuesta2" id="respuesta2">
-                <input class ="col-3 text-center"  type="text" name="respuesta3" id="respuesta3">
-                <input class ="col-3 text-center"  type="text" name="respuesta4" id="respuesta4">
-            </div>
-            <div class= "row p-1 justify-content-center">
-                    <div> RESPUESTA CORRECTA </div>
-            </div>
-            <div class= "row p-1 justify-content-center">
+            <div class= "row p-2 justify-content-center">
                 <div class="col-3 text-center text-success"><input type="radio" name="primero" value="2">  </div>
                 <div class="col-3 text-center text-success"><input type="radio" name="primero" value="2">  </div>
                 <div class="col-3 text-center text-success"><input type="radio" name="primero" value="3">  </div>
@@ -60,7 +49,7 @@
 
           <article class= "container">
                 <!-- BOTON GUARDAR -->
-                  <form action= "nuevaPregunta.html" method="GET" class = "row justify-content-center p-1">
+                  <form action= "modificarPreguntas.html" method="GET" class = "row justify-content-center p-1">
                     <button type="submit" class="btn btn-success col-3 botonjugar "> <b>GUARDAR</b> </button>
                   </form>
                 <!-- BOTON VOLVER -->

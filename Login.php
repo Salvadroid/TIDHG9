@@ -1,6 +1,10 @@
 <?php
+
+session_start(); 
+var_dump($_SESSION);"br";
+var_dump($_COOKIE);
+
 require 'funciones.php';
-session_start();
 $miBaseDeDatos = BDDlimpia('usuarios.json');  //esto es un array asociativo.
 $arrayDeUsuarios = listaDeUsersDe_($miBaseDeDatos);// esto es un array de arrays.
 $usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST , y se superan las validaciones, la función guarda los datos del usuario ingresado(con sus campos nombre, email y password)
@@ -26,16 +30,7 @@ if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar']
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
-        <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
-        <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
-        <li><a href="Registro.php" style="text-decoration:none;">Registro</a></li>
-        <li><a href="juego.html" style="text-decoration:none;">Juego</a></li>
-        <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
-      </ul>
-    </nav>
+  <?php require("nav.php");?>
     <h1 class="seccion">Ingresar</h1>
   </header>
   <section>
