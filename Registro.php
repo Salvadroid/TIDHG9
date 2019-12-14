@@ -82,7 +82,7 @@ if($_POST){
   <header>
     <nav>
       <ul>
-        <li><a href="Usuario.php" style="text-decoration:none;">Usuacontra"rio</a></li>
+        <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
         <li><a href="Contacto.html" style="text-decoration:none;">Contacto</a></li>
         <li><a href="F.A.Q.html" style="text-decoration:none;">F.A.Q.</a></li>
         <li><a href="Login.php" style="text-decoration:none;">Login</a></li>

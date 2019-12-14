@@ -1,6 +1,6 @@
 *{margin: 0 auto;}
 body{width: 100%;
-height: 100vh;
+/* height: 100vh; (esto no sirvió) */
 background-image: url('../img/background.jpg');
 font-family: "Alata","sans-serif" ;}
 

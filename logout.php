@@ -1,6 +1,7 @@
 <?php
 session_start();
-//setcookie("userEmail", "", -1);
+setcookie('email',"", time()-1);
+setcookie('password',"", time()-1);
 session_destroy();
 header("location: login.php");
 ?>

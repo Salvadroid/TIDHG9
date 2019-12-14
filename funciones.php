@@ -75,3 +75,15 @@ function datosDe_En_($perfilBuscado,$arrayDeUsers){
   return false;
 }
 }
+
+//función para crear session y redirigir al perfil.
+
+function crearSesionPara_($unUsuario){
+  $_SESSION['nombre'] = $unUsuario['nombre'];
+  header('Location:Usuario.php');
+}
+
+function crearCookiePara_($unUsuario){
+  setcookie('email',$unUsuario['email'], time()+60*60*24*7);
+  setcookie('password',$unUsuario['password'], time()+60*60*24*7);
+}

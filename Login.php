@@ -3,10 +3,14 @@ require 'funciones.php';
 session_start();
 $miBaseDeDatos = BDDlimpia('usuarios.json');  //esto es un array asociativo.
 $arrayDeUsuarios = listaDeUsersDe_($miBaseDeDatos);// esto es un array de arrays.
-$usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST la función guarda los datos del usuario ingresado(con sus campos nombre, email y password)
-$_SESSION['nombre']= $usuarioBuscado['nombre']; //acá guardo en session, SOLAMENTE el nombre del usuario.
-pre($_SESSION);
-//La validación nueva está dentro del html. ↓↓↓↓↓
+$usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST , y se superan las validaciones, la función guarda los datos del usuario ingresado(con sus campos nombre, email y password)
+//La validación nueva para iniciar SESSION↓↓↓↓↓
+if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar'] == '0') {
+  crearSesionPara_($usuarioBuscado);
+  crearCookiePara_($usuarioBuscado);
+}elseif ($_POST && $usuarioBuscado) {
+  crearSesionPara_($usuarioBuscado);
+}
  ?>
 
 <!DOCTYPE html>
@@ -52,17 +56,18 @@ pre($_SESSION);
             <div class="">
               <label for="password">Contraseña <br></label>
               <input type="password" name="password" value="">
-              <!-- <?php if($_POST && !$usuarioBuscado): ?> ← Acá, si $_POST existe, pero $usuarioBuscado es false, entonces se deniega el acceso. -->
+            <?php if($_POST && !$usuarioBuscado): ?>  <!--  ← Acá, si $_POST existe, pero $usuarioBuscado es false, entonces se deniega el acceso. -->
                 <small style="color:red;"><br>El nombre de usuario o contraseña son incorrectos.<br>Por favor inténtalo de nuevo.</small>
-              <!-- <?php else :header("location:Usuario.php"); ?> ← Si $_POST existe y $usuarioBuscado tambien, entonces se almacena(en la funcion de arriba) y se redirige al perfil. -->
-              <?php endif; ?>
+              <?php else:?>
+                <small></small>
+              <?php endif ?>
             </div>
             <div class="">
               <label for="recordar">Recordar contraseña</label>
-              <input type="checkbox" name="" value="recordar">
+              <input type="checkbox" name="recordar" value="0">
             </div>
             <div class="">
-              <button id="botInresar"type="submit" name="button">Ingresar</button>
+              <button id="botIngresar"type="submit" name="button">Ingresar</button>
             </div>
             <div class="">
                 <h2 class="">Ingresar con Facebook</h2>
@@ -76,5 +81,6 @@ pre($_SESSION);
       </div>
     </main>
   </section>
+
 </body>
 </html>
