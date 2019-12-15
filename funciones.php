@@ -80,6 +80,7 @@ function datosDe_En_($perfilBuscado,$arrayDeUsers){
 
 function crearSesionPara_($unUsuario){
   $_SESSION['nombre'] = $unUsuario['nombre'];
+  $_SESSION['imagen'] = $unUsuario['imagen'];
   header('Location:Usuario.php');
 }
 

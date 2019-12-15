@@ -1,6 +1,7 @@
 <?php 
 session_start();
-//var_dump($_SESSION);
+require('funciones.php');
+var_dump($_SESSION);
 //var_dump($_COOKIE);
  ?>
 <!DOCTYPE html>
@@ -19,10 +20,10 @@ session_start();
   <?php require("nav.php");?>
   </header>
   <section id="perfil">
-
+  
   <div class="circulo">
-    <h1 class="nombre">Elza Pato</h1>
-    <img src="img/Foto_Usuario.png" alt="Foto_De_Perfil.png" class="logo">
+    <h1 class="nombre"><?php echo $_SESSION["nombre"];?></h1>
+    <img src="<?php echo $_SESSION["imagen"]; ?>" width="250" height="250" alt="Foto_De_Perfil.png" class="logo">
     <p class="puntos">345 puntos
     </p>
 

@@ -46,7 +46,7 @@ if($_POST){
           $errores["imagen"]= "La imagen debe ser jpg, jpeg o png.";
         } else {
           $nombreImagen = uniqid('img_') . '.' . $ext;
-          $rutaImagen=dirname(__FILE__) . "/imgUsuarios/" . $nombreImagen;
+          $rutaImagen="imgUsuarios/" . $nombreImagen;
           move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagen );
 
         }
