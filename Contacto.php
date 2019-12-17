@@ -1,5 +1,5 @@
 <?php
- session_start(); 
+ session_start();
 //var_dump($_SESSION);"br";
 //var_dump($_COOKIE);
 ?>
@@ -14,7 +14,8 @@
     <title>Contacto</title>
 </head>
 <body>
-  <header>
+  <?php require 'header.php';  ?> 
+  <!-- <header>
     <nav>
       <ul>
         <li><a href="Usuario.php" style="text-decoration:none;">Usuario</a></li>
@@ -25,7 +26,7 @@
         <li><a href="Home.php" style="text-decoration:none;">Home</a></li>
       </ul>
     </nav>
-  </header>
+  </header> -->
   <main>
     <h1 class="seccion">Para contactarnos o enviar feedback:</h1>
     <article class="seccion">

@@ -1,6 +1,6 @@
 <?php
 
-session_start(); 
+session_start();
 //var_dump($_SESSION);
 //var_dump($_COOKIE);
 
@@ -29,10 +29,8 @@ if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar']
     <title>Login</title>
 </head>
 <body>
-  <header>
-  <?php require("nav.php");?>
-    <h1 class="seccion">Ingresar</h1>
-  </header>
+  <?php require 'header.php';  ?>
+  
   <section>
     <main>
       <div class="seccion">

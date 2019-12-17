@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require('funciones.php');
 var_dump($_SESSION);
@@ -16,11 +16,9 @@ var_dump($_SESSION);
     <title>Usuario</title>
 </head>
 <body id="bodyUser">
-  <header>
-  <?php require("nav.php");?>
-  </header>
+  <?php require 'header.php';  ?> 
   <section id="perfil">
-  
+
   <div class="circulo">
     <h1 class="nombre"><?php echo $_SESSION["nombre"];?></h1>
     <img src="<?php echo $_SESSION["imagen"]; ?>" width="250" height="250" alt="Foto_De_Perfil.png" class="logo">

@@ -1,5 +1,5 @@
 <?php
- session_start(); 
+ session_start();
 //var_dump($_SESSION);
 //var_dump($_COOKIE);
 ?>
@@ -19,9 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
     </head>
     <body class="bodyJuego">
-        <header>
-        <?php require("nav.php");?>
-        </header>
+      <?php require 'header.php';  ?> 
         <br>
     <section>
         <!-- MODIFICAR PREGUNTAS -->

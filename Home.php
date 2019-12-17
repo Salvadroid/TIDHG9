@@ -1,5 +1,5 @@
 <?php
- session_start(); 
+ session_start();
 //var_dump($_SESSION);
 //var_dump($_COOKIE);
 ?>
@@ -15,9 +15,8 @@
     <title>Document</title>
 </head>
 <body>
-  <header>
-    <?php require("nav.php");?>
-  </header>
+  <?php require 'header.php';  ?>
+  
   <section id="HomeSection">
       <div class="titulo">
        <img src="img/piensasapien.png" alt="logo">

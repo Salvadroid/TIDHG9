@@ -1,5 +1,5 @@
 <?php
- session_start(); 
+ session_start();
 //var_dump($_SESSION);
 //var_dump($_COOKIE);
 ?>
@@ -17,10 +17,8 @@
   <title>JUEGO</title>
   </head>
   <body>
-    <header>
-    <?php require("nav.php");?>
-    </header>
-
+    <?php require 'header.php';  ?>
+    
     <!-- HISTORIAL JUEGO DEL USUARIO -->
     <section>
       <article class="container-fluid">

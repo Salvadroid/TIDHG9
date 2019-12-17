@@ -73,7 +73,7 @@ if($_POST){
     else{
       var_dump($errores);
     }
-    
+
 }
 ?>
 <!DOCTYPE html>
@@ -88,10 +88,7 @@ if($_POST){
     <title>Registro</title>
 </head>
 <body>
-  <header>
-  <?php require("nav.php");?>
-      <h1 class="seccion">Registrarse</h1>
-    </header>
+  <?php require 'header.php';  ?> 
     <section>
       <main class="seccion">
        <div>
