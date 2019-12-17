@@ -61,6 +61,7 @@ transition: 0.5s;
       }
         .menu nav{
         position: absolute;
+        z-index: 400;
         background: rgb(212, 53, 53,.9);
         width: 70%;
          margin-left: -70%;
