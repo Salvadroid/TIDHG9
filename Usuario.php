@@ -1,7 +1,6 @@
 <?php
 session_start();
 require('funciones.php');
-var_dump($_SESSION);
 //var_dump($_COOKIE);
  ?>
 <!DOCTYPE html>
@@ -20,8 +19,8 @@ var_dump($_SESSION);
   <section id="perfil">
 
   <div class="circulo">
-    <h1 class="nombre"><?php echo $_SESSION["nombre"];?></h1>
-    <img src="<?php echo $_SESSION["imagen"]; ?>" width="250" height="250" alt="Foto_De_Perfil.png" class="logo">
+    <h1 class="nombre"><?php echo isset($_SESSION["nombre"])?$_SESSION["nombre"]:"Inicia Sesion";?></h1>
+    <img src="<?php echo isset($_SESSION["imagen"])?$_SESSION["imagen"]:"img/Foto_Usuario.png";?>" width="250" height="250" alt="Foto_De_Perfil.png" class="logo">
     <p class="puntos">345 puntos
     </p>
 

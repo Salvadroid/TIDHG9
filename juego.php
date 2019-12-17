@@ -122,19 +122,19 @@
 
       <article class= "container">
         <!-- BOTON JUGAR -->
-          <form action= "resultado.html" method="GET" class = "row justify-content-center p-1">
+          <form action= "resultado.php" method="GET" class = "row justify-content-center p-1">
             <button type="submit" class="btn btn-success col-3 botonjugar "> <b>JUGAR</b> </button>
           </form>
         <!-- BOTON REINICIAR -->
-        <form action="juego.html" method="GET" class="row justify-content-center p-2">
+        <form action="juego.php" method="GET" class="row justify-content-center p-2">
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>REINICIAR</b></a> </button>
         </form>
         <!-- BOTON MODIFICAR PREGUNTA -->
-        <form action="modificarPreguntas.html" method="GET" class="row justify-content-center p-2">
+        <form action="modificarPreguntas.php" method="GET" class="row justify-content-center p-2">
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>MODIFICAR</b></a> </button>
         </form>
         <!-- BOTON MODIFICAR PREGUNTA -->
-        <form action="nuevaPregunta.html" method="GET" class="row justify-content-center p-2">
+        <form action="nuevaPregunta.php" method="GET" class="row justify-content-center p-2">
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>NUEVA</b></a> </button>
         </form>
       </article>

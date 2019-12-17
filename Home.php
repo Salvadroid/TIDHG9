@@ -32,7 +32,7 @@
       </article>
       <article class="">
           <div id="botonJugar" class="">
-            <button type="submit" name="button"> <a href="juego.html">Jugar</a> </button>
+            <button type="submit" name="button"> <a href="juego.php">Jugar</a> </button>
           </div>
         </article>
       </div>
