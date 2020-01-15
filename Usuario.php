@@ -1,7 +1,6 @@
 <?php
 session_start();
 require('funciones.php');
-//var_dump($_COOKIE);
  ?>
 <!DOCTYPE html>
 <html lang="en" class="usuario">

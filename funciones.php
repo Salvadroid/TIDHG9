@@ -81,10 +81,16 @@ function datosDe_En_($perfilBuscado,$arrayDeUsers){
 function crearSesionPara_($unUsuario){
   $_SESSION['nombre'] = $unUsuario['nombre'];
   $_SESSION['imagen'] = $unUsuario['imagen'];
+  $_SESSION['email'] = $unUsuario['email'];
+  $_SESSION['password'] = $unUsuario['password'];
   header('Location:Usuario.php');
 }
 
 function crearCookiePara_($unUsuario){
   setcookie('email',$unUsuario['email'], time()+60*60*24*7);
   setcookie('password',$unUsuario['password'], time()+60*60*24*7);
+  setcookie('nombre',$unUsuario['nombre'], time()+60*60*24*7);
+  setcookie('imagen',$unUsuario['imagen'], time()+60*60*24*7);
+  
+
 }

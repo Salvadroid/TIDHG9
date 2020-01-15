@@ -1,8 +1,6 @@
 <?php
 
 session_start();
-//var_dump($_SESSION);
-//var_dump($_COOKIE);
 
 require 'funciones.php';
 $miBaseDeDatos = BDDlimpia('usuarios.json');  //esto es un array asociativo.
@@ -12,7 +10,9 @@ $usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST , y se su
 if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar'] == '0') {
   crearSesionPara_($usuarioBuscado);
   crearCookiePara_($usuarioBuscado);
-}elseif ($_POST && $usuarioBuscado) {
+} elseif (isset($_COOKIE['email'])){
+  crearSesionPara_($_COOKIE);
+} elseif ($_POST && $usuarioBuscado && !isset($_POST['recordar'])) {
   crearSesionPara_($usuarioBuscado);
 }
  ?>
