@@ -1,6 +1,8 @@
 <?php
 session_start();
-require('funciones.php');
+require_once ('autoload.php');
+var_dump( $usuarioAgregado);
+pre($jugador);
  ?>
 <!DOCTYPE html>
 <html lang="en" class="usuario">

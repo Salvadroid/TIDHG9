@@ -1,6 +1,7 @@
 <?php
-require 'funciones.php';
-$username="";
+
+require 'autoload.php';
+/*$username="";
 $email="";
 $errores=[];
 if($_POST){
@@ -36,8 +37,8 @@ if($_POST){
       elseif($_POST["password"]!=$_POST["repetirpass"]){
         $errores["contra"]="La contraseña no es igual a la repeticion!";
       }
-    }
-    if($_FILES){
+    }*/
+ /*   if($_FILES){
       if($_FILES["imagen"]["error"] != 0){
         $errores["imagen"]="Hubo un error al cargar la imagen.";
       } else {
@@ -52,29 +53,31 @@ if($_POST){
         }
       }
     }
-    if(!$errores){ // si no hay errores, guardamos los datos del usuario en el archivo .json
-      $arrayUsuario=[
+   *//* if(!$errores){ // si no hay errores, guardamos los datos del usuario en el archivo .json
+       $avatar= Avatar::armarUrlAvatar($_FILES);
+       $jugador =new Jugador($_POST['nombre'], $_POST['email'],$_POST['password'],$avatar);
+       // $usuarioAgregado= Jugador::agregarUsuario();
+     $arrayUsuario=[
         "nombre" => trim($_POST["nombre"]),
         "email" => $_POST["email"],
         "password" => password_hash($_POST["password"],PASSWORD_DEFAULT),
         "imagen" => $rutaImagen
-      ];
+     ];*/
+  
       //cookies y session para registro
-      session_start();
-    if($arrayUsuario && isset($_POST["recordarme"])){
-      crearSesionPara_($arrayUsuario);
-      crearCookiePara_($arrayUsuario);
-    } elseif($_POST && $arrayUsuario){
-      crearSesionPara_($arrayUsuario);
+     session_start();
+    if($jugador && isset($_POST["recordarme"])){
+      crearSesionPara_($jugador);
+      crearCookiePara_($jugador);
+    } elseif($_POST && $jugador){
+      crearSesionPara_($jugador);
+      enviarABaseDeDatos($jugador);
+      header("location:Usuario.php");
+    }else{
+      pre($errores);
     }
-        enviarABaseDeDatos($arrayUsuario);
-        header("location:Usuario.php");
-    }
-    else{
-      var_dump($errores);
-    }
+ 
 
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
