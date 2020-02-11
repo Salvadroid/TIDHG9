@@ -12,40 +12,27 @@ class Jugador
     protected $logueado;
     protected $createMode;
     
-     public function __construct($userName, $email, $passwordHash, $avatar,$id)
+     public function __construct($userName, $email, $passwordHash, $avatar)
     {
         $this->userName =$userName;
         $this->email=$email;
         $this->passwordHash= $passwordHash;
         $this->avatar= $avatar;
-        $this->id=$id;
+
     }
     
 
-  static public function agregarUsuario()
+  static public function agregarUsuario($userName,$email, $passwordHash, $avatar, $pdo)
     {
-        global $pdo;
-        $userName = trim($_POST['nombre']);
-        $email = $_POST['email'];
-        $passwordHash= password_hash($_POST["password"],PASSWORD_DEFAULT);
-        $imagen = Avatar::armarUrlAvatar();
-        $pdo = Conexion::conectar();
-        $sql = "INSERT INTO usuarios VALUES ( NULL, :userName, :email, :passwordHash, :imagen )";
+
+        $sql = "INSERT INTO usuarios VALUES (null, :userName, :email, :passwordHash, :imagen)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':passwordHash', $passwordHash, PDO::PARAM_STR);
-        $stmt->bindParam(':imagen', $imagen, PDO::PARAM_STR);
-
-        if( $stmt->execute() ){
-           $this->setuserName($userName);
-           $this->setPasswordHash($passwordHash);
-           $this->setImagen($imagen);
-           $this->setemail($email);
-           $this->setid($pdo->lastInsertId());
-            return true;
-        }
-        return false;
+        $stmt->bindParam(':imagen', $avatar, PDO::PARAM_STR);
+        
+        $stmt->execute(); 
 
     }
     
@@ -63,17 +50,17 @@ class Jugador
     }
 
 
-    public function getImagen()
+    public function getavatar()
         {
-            return $this->Imagen;
+            return $this->avatar;
         }
 
         /**
-         * @param mixed $Imagen
+         * @param mixed $avatar
          */
-        public function setImagen($Imagen)
+        public function setavatar($avatar)
         {
-            $this->Imagen = $Imagen;
+            $this->avatar = $avatar;
         }
 
         public function getid()

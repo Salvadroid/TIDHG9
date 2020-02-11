@@ -3,7 +3,7 @@
     class Conexion
     {
         static function conectar(){
-           $dsn= "mysql:dbName=dbusers;host=127.0.0.1;port=3306";
+           $dsn= "mysql:dbName=dbUsers;host=127.0.0.1;port=3306";
            $usuario= "root";
            $pass="";
            $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');

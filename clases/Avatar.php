@@ -13,11 +13,12 @@ class Avatar
                 $nombreImagen = uniqid('img_') . '.' . $ext;
                 $rutaImagen="imgUsuarios/" . $nombreImagen;
                 move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagen );
-      
+
+                return $rutaImagen;
               }
             }
           }
-          return $rutaImagen;
+         
     }
 
 }

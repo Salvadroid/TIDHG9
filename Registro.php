@@ -1,81 +1,10 @@
 <?php
 
 require 'autoload.php';
-/*$username="";
-$email="";
-$errores=[];
-if($_POST){
-    if(isset($_POST["nombre"])){
-        if(empty($_POST["nombre"])){
-        $errores["nombre"]= "El nombre esta vacio<br>";
-        }
-        elseif(strlen($_POST["nombre"]) < 3){
-            $errores["nombre"]= "Nombre mas largo porfa!<br>";
-        }
-        else{
-        $username=$_POST["nombre"];
-        }
-    }
-    if(isset($_POST["email"])){
-        if(empty($_POST["email"])){
-            $errores["email"]= "El mail esta vacio<br>";
-        }
-        elseif(!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
-        $errores["email"]= "Email no valido!<br>";
-        }
-        else{
-        $email=$_POST["email"];
-        }
-    }
-    if(isset($_POST["password"])){
-      if(empty($_POST["password"]) || empty($_POST["repetirpass"])){
-          $errores["contra"]= "La contraseña esta vacia<br>";
-      }
-      elseif(strlen($_POST["password"])<6){
-      $errores["contra"]= "La contraseña es demasiado corta!<br>";
-      }
-      elseif($_POST["password"]!=$_POST["repetirpass"]){
-        $errores["contra"]="La contraseña no es igual a la repeticion!";
-      }
-    }*/
- /*   if($_FILES){
-      if($_FILES["imagen"]["error"] != 0){
-        $errores["imagen"]="Hubo un error al cargar la imagen.";
-      } else {
-        $ext = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
-        if ($ext != "jpg" && $ext != "jpeg" && $ext != "png") {
-          $errores["imagen"]= "La imagen debe ser jpg, jpeg o png.";
-        } else {
-          $nombreImagen = uniqid('img_') . '.' . $ext;
-          $rutaImagen="imgUsuarios/" . $nombreImagen;
-          move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagen );
 
-        }
-      }
-    }
-   *//* if(!$errores){ // si no hay errores, guardamos los datos del usuario en el archivo .json
-       $avatar= Avatar::armarUrlAvatar($_FILES);
-       $jugador =new Jugador($_POST['nombre'], $_POST['email'],$_POST['password'],$avatar);
-       // $usuarioAgregado= Jugador::agregarUsuario();
-     $arrayUsuario=[
-        "nombre" => trim($_POST["nombre"]),
-        "email" => $_POST["email"],
-        "password" => password_hash($_POST["password"],PASSWORD_DEFAULT),
-        "imagen" => $rutaImagen
-     ];*/
-  
-      //cookies y session para registro
-     session_start();
-    if($jugador && isset($_POST["recordarme"])){
-      crearSesionPara_($jugador);
-      crearCookiePara_($jugador);
-    } elseif($_POST && $jugador){
-      crearSesionPara_($jugador);
-      enviarABaseDeDatos($jugador);
-      header("location:Usuario.php");
-    }else{
-      pre($errores);
-    }
+
+
+
  
 
 ?>
