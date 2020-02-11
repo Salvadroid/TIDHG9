@@ -1,21 +1,17 @@
 <?php
 
-    class Conexion
-    {
-        static function conectar(){
-           $dsn= "mysql:dbName=dbUsers;host=127.0.0.1;port=3306";
-           $usuario= "root";
-           $pass="";
-           $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
-          try {
-            $pdo = new PDO($dsn, $usuario, $pass, $options);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-            return $pdo;
-          } catch (PDOException $errores) {
-              echo "No se puede conectar a la base de datos. <br> ". $errores->getmessage();
-             exit;
-          }
-        }
-    
-    }
+$user = 'root';
+$pass = '';
+try {
+
+  $connection = new PDO(
+    "mysql:host=localhost; dbname=piensasapien_db; charset=utf8mb4",
+    $user,
+    $pass,
+    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+  );
+} catch (PDOException $exception) {
+  echo $exception->getMessage();
+}
+
 ?>

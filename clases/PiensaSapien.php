@@ -1,22 +1,35 @@
-<?php 
-class PiensaSapien 
+<?php
+include_once('Conexion.php');
+class PiensaSapien
 {
-   protected $quizzes;
-   protected $jugadores;
-   protected $ranking;
-   protected $categorias;
 
-   public function listarJugadores()
+   public static function listarJugadores()
         {
-            $pdo = Conexion::conectar();
-            $sql = "SELECT userName, imagen, puntaje 
-                        FROM usuarios";
-            $stmt = $pdo->prepare($sql);
+            global $connection;
+            $stmt = $connection->prepare("SELECT userName
+                        FROM jugadores");
             $stmt->execute();
 
             $listadoUsuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $listadoUsuarios;
+            return($listadoUsuarios);
         }
-       
+        
+    public static function registrarJugadores($unArray){
+
+      global $connection;
+      $sentencia = $connection->prepare("INSERT INTO jugadores(userName,passworHash,email,imagen)
+                                VALUES(:name,:pass,:email,:img)");
+      $sentencia->bindParam(':name', $unArray['nombre']);
+      $sentencia->bindParam(':pass', $unArray['password']);
+      $sentencia->bindParam(':email', $unArray['email']);
+      $sentencia->bindParam(':img', $unArray['imagen']);
+
+      $sentencia->execute();
+      echo "Datos guardados con éxito";
+
+
+    }
 }
+    $prueba= new PiensaSapien;
+    $prueba::listarJugadores();
 ?>
