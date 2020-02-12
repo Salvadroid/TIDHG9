@@ -1,7 +1,8 @@
 <?php
 
 require 'autoload.php';
-
+//Todavia faltaria crear la sesion post registro. Hasta ahora solo mete los datos en la bbdd.
+//Hay un error. Deja el array $nuevoUser vacío, si no se elije un archivo de avatar.
 $nuevoUser = PiensaSapien::getDatosDeUser();
              PiensaSapien::registrarJugador($nuevoUser);
 ?>
