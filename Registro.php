@@ -2,11 +2,8 @@
 
 require 'autoload.php';
 
-
-
-
- 
-
+$nuevoUser = PiensaSapien::getDatosDeUser();
+             PiensaSapien::registrarJugador($nuevoUser);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +17,7 @@ require 'autoload.php';
     <title>Registro</title>
 </head>
 <body>
-  <?php require 'header.php';  ?> 
+  <?php require 'header.php';  ?>
     <section>
       <main class="seccion">
        <div>
