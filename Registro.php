@@ -1,10 +1,12 @@
 <?php
 
-require 'autoload.php';
-//Todavia faltaria crear la sesion post registro. Hasta ahora solo mete los datos en la bbdd.
-//Hay un error. Deja el array $nuevoUser vacío, si no se elije un archivo de avatar.
-$nuevoUser = PiensaSapien::getDatosDeUser();
+include('./autoload.php');
+//Ya esta la session y las cookies desde registro.
+//Eliminé el selector de archivos por el momento, igual el boton de facebook..
+$nuevoUser = PiensaSapien::getDatosDeNuevoUser();
              PiensaSapien::registrarJugador($nuevoUser);
+             PiensaSapien::redireccionarUsuario($nuevoUser);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,13 +59,13 @@ $nuevoUser = PiensaSapien::getDatosDeUser();
     <input  type="password" name="repetirpass"><br>
 
 </div>
-<div>
+<!-- <div>
      <label class="" for="imagen">Foto de usuario:<br></label>
      <input  type="file" name="imagen"><br>
       <?php if(isset($errores["imagen"])): ?>
       <span  style= "color:red; font-size:12px;"><?= $errores["imagen"]?></span>
       <?php endif; ?>
-</div>
+</div> -->
 <div class="">
               <label for="recordar">Recordar contraseña</label>
               <input type="checkbox" name="recordarme" value="0">
@@ -71,13 +73,13 @@ $nuevoUser = PiensaSapien::getDatosDeUser();
 <div class="">
     <button id="botEnviar" type="submit" name="button">Enviar</button>
 </div>
-<div class="">
+<!-- <div class="">
     <h2 class="">Registrarse con Facebook</h2>
 
 </div>
 <div class="">
     <button id="botonFacebook" type="submit" name="button">Registrarse con Facebook</button>
-</div>
+</div> -->
 
 </form>
          </div>

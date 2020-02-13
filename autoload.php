@@ -6,7 +6,7 @@
   require_once('clases/Avatar.php');
   require_once('clases/PiensaSapien.php');
   require_once('clases/Conexion.php');
-
+  session_start();// agrego lo de session acá directamente, ya que se va a usar constantemente.
 
 
 

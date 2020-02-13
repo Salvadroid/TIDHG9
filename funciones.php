@@ -13,7 +13,7 @@ function dnd($unArray){
 
 // función para guardar datos de user en una variable
 /*
-function datosDeNuevoUsuario($unArray){
+function datosDeNuevoUsuario($unArray){-----------------QUEDA FUERA DE USO!!!!
   if($unArray){
     $usuario = [
       'nombre'=> trim($unArray['nombre']),
@@ -24,38 +24,38 @@ function datosDeNuevoUsuario($unArray){
   }
 }*/
 //función para mandar el array con datos de user a un archivo json
-function enviarABaseDeDatos($unArray){
-  if ($unArray){
-    $usuarioJson = json_encode($unArray);
-    file_put_contents("usuarios.json",$usuarioJson . PHP_EOL, FILE_APPEND);
-  }
-}
+// function enviarABaseDeDatos($unArray){---------------------QUEDA FUERA DE USO!!!!
+//   if ($unArray){
+//     $usuarioJson = json_encode($unArray);
+//     file_put_contents("usuarios.json",$usuarioJson . PHP_EOL, FILE_APPEND);
+//   }
+// }
 //___________________________________________________________________________
 
 
 
-//funciones para recuperar base de datos de un archivo Json.
-function traerBaseDeDatosDesde_($unJson){ //acá obtengo el array de usuarios.
-  $strJson = file_get_contents($unJson);
-  $strJson = explode(PHP_EOL,$strJson,);
-  return $strJson;
-}
-function BDDlimpia($unJson){ //acá elimino el usuario vacío que aparece por el PHP_EOL
-  $arrayUsers = traerBaseDeDatosDesde_($unJson);
-  array_pop($arrayUsers);
-  return $arrayUsers;
-}
+//funciones para recuperar base de datos de un archivo Json.----FUERA DE USO!!!
+// function traerBaseDeDatosDesde_($unJson){ //acá obtengo el array de usuarios.
+//   $strJson = file_get_contents($unJson);
+//   $strJson = explode(PHP_EOL,$strJson,);
+//   return $strJson;
+// }
+// function BDDlimpia($unJson){ //acá elimino el usuario vacío que aparece por el PHP_EOL
+//   $arrayUsers = traerBaseDeDatosDesde_($unJson);-----------QUEDA FUERA DE USO!!!
+//   array_pop($arrayUsers);
+//   return $arrayUsers;
+// }
 
 //_____________________________________________________________________________
 
 //función para armar lista de users desde de la base de datos.
 // Queda como un array de arrays.
-function listaDeUsersDe_($unaBDD){
-  foreach ($unaBDD as $user) {
-    $arrayDeUsers[]= json_decode($user,true);
-    }
-  return $arrayDeUsers;
-}
+// function listaDeUsersDe_($unaBDD){--------------- QUEDA FUERA DE USO!!!!
+//   foreach ($unaBDD as $user) {
+//     $arrayDeUsers[]= json_decode($user,true);
+//     }
+//   return $arrayDeUsers;
+// }
 //________________________________________________________________________
 
 //acá función para buscar un usuario específico en una lista de usuarios descargada
@@ -63,34 +63,34 @@ function listaDeUsersDe_($unaBDD){
 //los datos, retorna false. Ese dato false me sirve para insertar un msj de alerta en el php en caso de fallo.
 //
 
-function datosDe_En_($perfilBuscado,$arrayDeUsers){
-
-  if($perfilBuscado){
-    foreach ($arrayDeUsers as $user) {
-    if ($user['email'] == $perfilBuscado['email'] && password_verify($perfilBuscado['password'],$user['password'])) {
-      return $user;
-    }
-  }
-}else{
-  return false;
-}
-}
-
-//función para crear session y redirigir al perfil.
-
-function crearSesionPara_($unUsuario){
-  $_SESSION['nombre'] = $unUsuario['nombre'];
-  $_SESSION['imagen'] = $unUsuario['imagen'];
-  $_SESSION['email'] = $unUsuario['email'];
-  $_SESSION['password'] = $unUsuario['password'];
-  header('Location:Usuario.php');
-}
-
-function crearCookiePara_($unUsuario){
-  setcookie('email',$unUsuario['email'], time()+60*60*24*7);
-  setcookie('password',$unUsuario['password'], time()+60*60*24*7);
-  setcookie('nombre',$unUsuario['nombre'], time()+60*60*24*7);
-  setcookie('imagen',$unUsuario['imagen'], time()+60*60*24*7);
-  
-
-}
+// function datosDe_En_($perfilBuscado,$arrayDeUsers){
+//
+//   if($perfilBuscado){
+//     foreach ($arrayDeUsers as $user) {
+//     if ($user['email'] == $perfilBuscado['email'] && password_verify($perfilBuscado['password'],$user['password'])) {
+//       return $user;
+//     }
+//   }
+// }else{
+//   return false;
+// }
+// }
+//
+// //función para crear session y redirigir al perfil.
+//
+// function crearSesionPara_($unUsuario){
+//   $_SESSION['nombre'] = $unUsuario['nombre'];
+//   $_SESSION['imagen'] = $unUsuario['imagen'];
+//   $_SESSION['email'] = $unUsuario['email'];
+//   $_SESSION['password'] = $unUsuario['password'];
+//   header('Location:Usuario.php');
+// }
+//
+// function crearCookiePara_($unUsuario){
+//   setcookie('email',$unUsuario['email'], time()+60*60*24*7);
+//   setcookie('password',$unUsuario['password'], time()+60*60*24*7);
+//   setcookie('nombre',$unUsuario['nombre'], time()+60*60*24*7);
+//   setcookie('imagen',$unUsuario['imagen'], time()+60*60*24*7);
+//
+//
+// }

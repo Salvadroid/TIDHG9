@@ -1,20 +1,8 @@
 <?php
+include('./autoload.php');
 
-session_start();
-
-require 'funciones.php';
-$miBaseDeDatos = BDDlimpia('usuarios.json');  //esto es un array asociativo.
-$arrayDeUsuarios = listaDeUsersDe_($miBaseDeDatos);// esto es un array de arrays.
-$usuarioBuscado = datosDe_En_($_POST,$arrayDeUsuarios);//si hay $_POST , y se superan las validaciones, la función guarda los datos del usuario ingresado(con sus campos nombre, email y password)
-//La validación nueva para iniciar SESSION↓↓↓↓↓
-if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar'] == '0') {
-  crearSesionPara_($usuarioBuscado);
-  crearCookiePara_($usuarioBuscado);
-} elseif (isset($_COOKIE['email'])){
-  crearSesionPara_($_COOKIE);
-} elseif ($_POST && $usuarioBuscado && !isset($_POST['recordar'])) {
-  crearSesionPara_($usuarioBuscado);
-}
+$usuarioBuscado = PiensaSapien::buscarUsuarioEnBBDD();
+                  PiensaSapien::redireccionarUsuario($usuarioBuscado);
  ?>
 
 <!DOCTYPE html>
@@ -30,7 +18,7 @@ if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar']
 </head>
 <body>
   <?php require 'header.php';  ?>
-  
+
   <section>
     <main>
       <div class="seccion">
@@ -62,12 +50,12 @@ if ($_POST && $usuarioBuscado && isset($_POST['recordar']) && $_POST['recordar']
             <div class="">
               <button id="botIngresar"type="submit" name="button">Ingresar</button>
             </div>
-            <div class="">
+            <!-- <div class="">
                 <h2 class="">Ingresar con Facebook</h2>
             </div>
             <div class="">
               <button id="BotonFacebookIngreso"type="submit" name="button">Ingresar con Facebook</button>
-            </div>
+            </div> -->
           </form>
         </div>
       </article>

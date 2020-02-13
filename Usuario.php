@@ -1,8 +1,6 @@
 <?php
-session_start();
-require_once ('autoload.php');
-var_dump( $usuarioAgregado);
-pre($jugador);
+include('./autoload.php');
+//var_dump($_SESSION);
  ?>
 <!DOCTYPE html>
 <html lang="en" class="usuario">
@@ -16,7 +14,7 @@ pre($jugador);
     <title>Usuario</title>
 </head>
 <body id="bodyUser">
-  <?php require 'header.php';  ?> 
+  <?php require 'header.php';  ?>
   <section id="perfil">
 
   <div class="circulo">

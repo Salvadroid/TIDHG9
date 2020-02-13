@@ -1,15 +1,31 @@
 <?php
+// include('./Conexion.php');
+// include('../funciones.php');
 class PiensaSapien extends Validador
 {
 
    public static function listarJugadores(){
             global $connection;
-            $stmt = $connection->prepare("SELECT userName
+            $stmt = $connection->prepare("SELECT email, passwordHash,userName,imagen
                         FROM jugadores");
             $stmt->execute();
 
             $listadoUsuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return($listadoUsuarios);
+   }
+
+   public static function buscarUsuarioEnBBDD(){
+     $usuarios = self::listarJugadores();//lista completa de usuarios en bbdd
+     $usuarioBuscado=self::validarFormularioDeLogin($usuarios);//si existe, datos del usuario ingresado en login
+     // if ($_POST && $usuarioBuscado) {
+     //   crearSesionPara_($usuarioBuscado);
+       //crearCookiePara_($usuarioBuscado);
+     // } elseif (isset($_COOKIE['email'])){
+     //   crearSesionPara_($_COOKIE);
+     // } elseif ($_POST && $usuarioBuscado && !isset($_POST['recordar'])) {
+     //   crearSesionPara_($usuarioBuscado);
+    // }
+     return $usuarioBuscado;
    }
 
    public static function registrarJugador($unArray){
@@ -24,10 +40,43 @@ class PiensaSapien extends Validador
       $sentencia->bindParam(':imagen', $unArray['imagen']);
 
       $sentencia->execute();
-      echo "Datos guardados con éxito";
      }
 
      }
+
+   private static function crearSesionPara_($unArray){
+
+       $_SESSION['nombre'] = $unArray['userName'];
+       $_SESSION['imagen'] = $unArray['imagen'];
+       $_SESSION['email'] = $unArray['email'];
+       $_SESSION['password'] = $unArray['passwordHash'];
+       header('Location:Usuario.php');
+
+     }
+
+   private static function crearCookiePara_($unArray){
+       setcookie('email',$unArray['email'], time()+60*60*24*7);
+       setcookie('password',$unArray['passwordHash'], time()+60*60*24*7);
+       setcookie('nombre',$unArray['userName'], time()+60*60*24*7);
+       setcookie('imagen',$unArray['imagen'], time()+60*60*24*7);
+
+
+     }
+
+   public static function redireccionarUsuario($unArray){
+     if ($unArray){
+
+       self::crearSesionPara_($unArray);
+
+     }else if($unArray&&(isset($_POST['recordar']) && $_POST['recordar'] == '0')){
+         self::crearSesionPara_($unArray);
+         self::crearCookiePara_($unArray);
+       }
+     }
+
+
+
+
 }
 
     // probando.. probandoo..
@@ -35,6 +84,6 @@ class PiensaSapien extends Validador
     // $usuario['email']='prueba@prueba.com';
     // $usuario['password']='123123123';
     // $usuario['imagen']='una url';
-    // PiensaSapien::registrarJugador($usuario);
+    //PiensaSapien::buscarUsuarioEnBBDD();
 
 ?>
