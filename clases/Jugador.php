@@ -22,19 +22,7 @@ class Jugador
     }
     
 
-  static public function agregarUsuario($userName,$email, $passwordHash, $avatar, $pdo)
-    {
-
-        $sql = "INSERT INTO usuarios VALUES (null, :userName, :email, :passwordHash, :imagen)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':passwordHash', $passwordHash, PDO::PARAM_STR);
-        $stmt->bindParam(':imagen', $avatar, PDO::PARAM_STR);
-        
-        $stmt->execute(); 
-
-    }
+ 
     
     public function getPasswordHash()
     {
