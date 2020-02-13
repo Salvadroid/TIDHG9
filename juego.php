@@ -133,9 +133,9 @@
         <form action="modificarPreguntas.php" method="GET" class="row justify-content-center p-2">
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>MODIFICAR</b></a> </button>
         </form>
-        <!-- BOTON MODIFICAR PREGUNTA -->
-        <form action="nuevaPregunta.php" method="GET" class="row justify-content-center p-2">
-          <button type="submit" class="btn btn-success col-3 botonjugar"> <b>NUEVA</b></a> </button>
+        <!-- BOTON CREAR QUIZ -->
+        <form action="crearQuiz.php" method="GET" class="row justify-content-center p-2">
+          <button type="submit" class="btn btn-success col-3 botonjugar"> <b>CREAR QUIZZ</b></a> </button>
         </form>
       </article>
 
