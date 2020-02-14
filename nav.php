@@ -12,6 +12,7 @@
         <?php endif; ?>
         <?php if (isset($_SESSION["nombre"])):?>
             <li><a href="logout.php" style="text-decoration:none;">Cerrar sesion</a></li>
+            <li><a href="crearQuiz.php" style="text-decoration:none;">Crear Pregunta</a></li>
        <?php endif; ?>
 
 

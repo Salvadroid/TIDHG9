@@ -75,6 +75,26 @@ class PiensaSapien extends Validador
      }
 
 
+   public static function guardarPreguntaEnBBDD($unArray){
+       if($_POST){
+        global $connection;
+        $sentencia = $connection->prepare("INSERT INTO preguntas(pregunta,respuestaCorrecta,respuestaErronea1,respuestaErronea2,respuestaErronea3)
+                                  VALUES(:Pregunta,:respuestaCorrecta,:respuestaErronea1,:respuestaErronea2,:respuestaErronea3)");
+        $sentencia->bindParam(':Pregunta', $unArray['Pregunta']);
+        $sentencia->bindParam(':respuestaCorrecta', $unArray['respuestaCorrecta']);
+        $sentencia->bindParam(':respuestaErronea1', $unArray['respuestaErronea1']);
+        $sentencia->bindParam(':respuestaErronea2', $unArray['respuestaErronea2']);
+        $sentencia->bindParam(':respuestaErronea3', $unArray['respuestaErronea3']);
+
+
+        $sentencia->execute();
+        echo "Pregunta guardada con éxito";
+       }
+
+     }
+
+
+
 
 
 }

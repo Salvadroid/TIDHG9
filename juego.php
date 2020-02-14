@@ -18,7 +18,7 @@
   </head>
   <body>
     <?php require 'header.php';  ?>
-    
+
     <!-- HISTORIAL JUEGO DEL USUARIO -->
     <section>
       <article class="container-fluid">
@@ -130,13 +130,13 @@
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>REINICIAR</b></a> </button>
         </form>
         <!-- BOTON MODIFICAR PREGUNTA -->
-        <form action="modificarPreguntas.php" method="GET" class="row justify-content-center p-2">
+        <!-- <form action="modificarPreguntas.php" method="GET" class="row justify-content-center p-2">
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>MODIFICAR</b></a> </button>
         </form>
         <!-- BOTON CREAR QUIZ -->
-        <form action="crearQuiz.php" method="GET" class="row justify-content-center p-2">
+        <!-- <form action="crearQuiz.php" method="GET" class="row justify-content-center p-2">
           <button type="submit" class="btn btn-success col-3 botonjugar"> <b>CREAR QUIZZ</b></a> </button>
-        </form>
+        </form> --> -->
       </article>
 
     </section>
